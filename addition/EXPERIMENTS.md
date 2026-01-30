@@ -25,14 +25,12 @@ This document records the detailed history, settings, and observations of experi
     *   *Observation:* Val loss dropped even faster and lower.
     *   *Result:* **99% Accuracy**. The combination of sufficient iterations, larger batch size, and full dataset visibility allowed the model to perfectly memorize the arithmetic table, eliminating the persistent errors found in Test 4.
 
-### Train/Loss Graph
-<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/8e068168-cd60-4f5f-9ca1-00fa14ef529c" />
-
-### Val/Loss Graph
-<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/83f2bbcd-53bb-438b-a118-13ec384dcce1" />
+| Train/Loss | Val/Loss |
+|:---:|:---:|
+| <img width="400" alt="Train Loss" src="https://github.com/user-attachments/assets/8e068168-cd60-4f5f-9ca1-00fa14ef529c" /> | <img width="400" alt="Val Loss" src="https://github.com/user-attachments/assets/83f2bbcd-53bb-438b-a118-13ec384dcce1" /> | 
 
 ### Final Evaluation (N=100)
-<img width="362" height="243" alt="image" src="https://github.com/user-attachments/assets/60679338-16fe-472f-ad94-cc171cfba3ca" />
+<img width="300" alt="Evaluation" src="https://github.com/user-attachments/assets/60679338-16fe-472f-ad94-cc171cfba3ca" />
 
 ---
 
@@ -47,14 +45,13 @@ This document records the detailed history, settings, and observations of experi
 *   **Analysis:**
     *   **Loss Interpretation:** A loss of ~1.0 suggests some confusion (perplexity ~2.7), but `argmax` sampling consistently picks the correct digits. The model has mastered the syntax (`+`, `=`) perfectly.
     *   **Generalization vs Memorization:** Since we used the whole dataset, this is technically memorization. However, the fact it generates *new* valid equations immediately after the answer suggests it has learned the *structure* of the data perfectly.
-### Train/Loss Graph
-<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/5453915c-7406-4615-ae14-cc252fe20b90" />
 
-### Val/Loss Graph
-<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/addf1f4c-a98b-4170-a048-05ba4f103b41" />
+| Train/Loss | Val/Loss |
+|:---:|:---:|
+| <img width="400" alt="Train Loss" src="https://github.com/user-attachments/assets/5453915c-7406-4615-ae14-cc252fe20b90" /> | <img width="400" alt="Val Loss" src="https://github.com/user-attachments/assets/addf1f4c-a98b-4170-a048-05ba4f103b41" /> | 
 
-### Final Evaluation (N=100):
-<img width="362" height="243" alt="image" src="https://github.com/user-attachments/assets/3db79034-85be-4cf1-a415-4d41df861c92" />
+### Final Evaluation (N=100)
+<img width="300" alt="Evaluation" src="https://github.com/user-attachments/assets/3db79034-85be-4cf1-a415-4d41df861c92" /> |
 
 ### Out-of-Distribution Test (3-Digit Inputs)
 *   **Initial Observation:** `100+1=` often output `101` (Correct), leading to an initial hypothesis of partial generalization.
