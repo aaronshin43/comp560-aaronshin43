@@ -53,11 +53,12 @@ This document records the detailed history, settings, and observations of experi
     *   Accuracy: **91.00%**
 
 ### Out-of-Distribution Test (3-Digit Inputs)
-*   **Prompt:** `100+1=`, `100+13=`, `101+1=`
-*   **Result:**
-    *   `100+1=`: Often outputs `101` (Correct!), but sometimes `117`.
-    *   `100+13=`: Fails (Outputs `33`, `23`, `32`).
-*   **Insight:** The model shows partial generalization capabilities (getting close to the answer or getting simple carry cases right) even though it was never trained on 3-digit inputs, but struggles with consistent arithmetic on unseen digits.
+*   **Initial Observation:** `100+1=` often output `101` (Correct), leading to an initial hypothesis of partial generalization.
+*   **Rigorous Evaluation (N=100):**
+    *   **Method:** Modified `evaluate.py` to use `range_max=1000` (testing 3-digit addition).
+    *   **Result:** 0/100 Correct.
+    *   **Accuracy:** **0.00%**
+*   **Insight:** The model completely failed to generalize to 3-digit numbers. The earlier success with `100+1` was likely a statistical fluke or a specific outcome of the randomized weights rather than true algorithmic understanding. The model has mastered rote memorization for the trained domain (0-99) but cannot extrapolate the addition algorithm to unseen inputs.
 
 ---
 
