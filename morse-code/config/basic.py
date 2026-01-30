@@ -10,9 +10,9 @@ log_interval = 1
 # we expect to overfit on this small dataset, so only save when val improves
 always_save_checkpoint = False
 
-wandb_log = False # override via command line if you like
-wandb_project = 'alphabet-basic'
-wandb_run_name = 'infant'
+wandb_log = True # override via command line if you like
+wandb_project = 'aaronshin-firstexperiment'
+wandb_run_name = 'eng-to-morse'
 
 dataset = 'basic'
 gradient_accumulation_steps = 1
