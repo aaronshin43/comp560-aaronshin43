@@ -5,23 +5,25 @@ This document records the detailed history, settings, and observations of experi
 ## Experiment 1: Basic Addition (Single Digit)
 *   **Goal:** Verify if nanoGPT can learn single-digit addition (0+0 to 9+9) via rote memorization.
 *   **Dataset:** All combinations of 1-digit addition (100 samples total).
-*   **Initial Settings:** `max_iters = 2000`, `lr_decay_iters = 2000`, `batch_size = 12`.
-*   **Initial Observation (2000 iters):** 
-    *   Train loss 0.0672, val loss 0.0648.
-    *   **Success Cases:** `1+1=2`, `5+3=8`, `2+2=4` (100% correct).
-    *   **Failure Case:** `3+5=` outputs varied (`7`, `6`, `8`) unlike other stable cases.
-    *   *Hypothesis:* Under-fitting or unlucky initialization for specific samples.
 
-### Follow-up (5000 iters)
-*   **Settings:** Increased `max_iters` to 5000.
-*   **Observations:**
-    *   Train/Val loss stable around ~0.064.
-    *   **Most cases**: Still generated correctly.
-    *   **Persistent Errors**: `3+5=` -> consistently output `9`. `1+3=` -> mostly `6`.
-*   **Analysis:** Classic "memorization failure" in small networks. The model settled into a local minimum where specific keys were mapped to wrong values, likely due to small batch size or capacity constraints.
-*   **Final Evaluation (N=100):**
-    *   Result: 99/100 Correct.
-    *   Accuracy: **99.00%**
+### Phase 1: Initial Attempts (Splitting Issue)
+*   **Context:** Initially used a 90/10 random split for train/val sets.
+*   **Test 1 (Blue Line):** `iters=2000`. Val loss increased significantly (~3.0).
+    *   *Analysis:* The model memorized the training set (low train loss) but failed completely on the validation set because the validation set contained specific arithmetic pairs (e.g., `3+5`) that were never seen during training. This led to high overfitting.
+*   **Test 2 (Red Line):** `iters=5000`. Val loss increased even further (~3.5).
+    *   *Analysis:* Extending training only worsened the overfitting. The model became extremely confident in its correct answers for the training set, but completely wrong on the unseen validation set pairs.
+
+### Phase 2: Memorization Strategy (No Split)
+*   **Context:** Changed `prepare.py` to use the **same full dataset** (100 samples) for both train and validation to force rote memorization of the entire addition table.
+*   **Test 3 (Green Line):** `iters=2000`. Val loss dropped dramatically to ~0.06.
+    *   *Analysis:* Removing the split solved the high loss issue. The model successfully memorized most pairs.
+*   **Test 4 (Purple Line):** `iters=5000`. Val loss stable low (~0.06).
+    *   *Analysis:* Longer training stabilized the loss, but specific errors (e.g., `3+5=9`) persisted due to local minima or insufficient batch size.
+
+### Phase 3: Final Optimization
+*   **Test 5 (Pink Line):** `iters=7000`, Increased `batch_size`.
+    *   *Observation:* Val loss dropped even faster and lower.
+    *   *Result:* **99% Accuracy**. The combination of sufficient iterations, larger batch size, and full dataset visibility allowed the model to perfectly memorize the arithmetic table, eliminating the persistent errors found in Test 4.
 
 ### Train/Loss Graph
 <img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/8e068168-cd60-4f5f-9ca1-00fa14ef529c" />
@@ -29,6 +31,9 @@ This document records the detailed history, settings, and observations of experi
 ### Val/Loss Graph
 <img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/83f2bbcd-53bb-438b-a118-13ec384dcce1" />
 
+### Final Evaluation (N=100)
+*   Result: 99/100 Correct.
+*   Accuracy: **99.00%**
 
 ---
 
