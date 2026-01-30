@@ -32,8 +32,7 @@ This document records the detailed history, settings, and observations of experi
 <img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/83f2bbcd-53bb-438b-a118-13ec384dcce1" />
 
 ### Final Evaluation (N=100)
-*   Result: 99/100 Correct.
-*   Accuracy: **99.00%**
+<img width="362" height="243" alt="image" src="https://github.com/user-attachments/assets/60679338-16fe-472f-ad94-cc171cfba3ca" />
 
 ---
 
@@ -48,16 +47,24 @@ This document records the detailed history, settings, and observations of experi
 *   **Analysis:**
     *   **Loss Interpretation:** A loss of ~1.0 suggests some confusion (perplexity ~2.7), but `argmax` sampling consistently picks the correct digits. The model has mastered the syntax (`+`, `=`) perfectly.
     *   **Generalization vs Memorization:** Since we used the whole dataset, this is technically memorization. However, the fact it generates *new* valid equations immediately after the answer suggests it has learned the *structure* of the data perfectly.
-*   **Final Evaluation (N=100):**
-    *   Result: 91/100 Correct.
-    *   Accuracy: **91.00%**
+### Train/Loss Graph
+<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/5453915c-7406-4615-ae14-cc252fe20b90" />
+
+### Val/Loss Graph
+<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/addf1f4c-a98b-4170-a048-05ba4f103b41" />
+
+### Final Evaluation (N=100):
+<img width="362" height="243" alt="image" src="https://github.com/user-attachments/assets/3db79034-85be-4cf1-a415-4d41df861c92" />
 
 ### Out-of-Distribution Test (3-Digit Inputs)
 *   **Initial Observation:** `100+1=` often output `101` (Correct), leading to an initial hypothesis of partial generalization.
+
+    <img width="118" height="250" alt="image" src="https://github.com/user-attachments/assets/599aa6c7-77c5-4ff3-b1ca-fecd9d0d9eba" />
+
 *   **Rigorous Evaluation (N=100):**
     *   **Method:** Modified `evaluate.py` to use `range_max=1000` (testing 3-digit addition).
-    *   **Result:** 0/100 Correct.
-    *   **Accuracy:** **0.00%**
+    <img width="362" height="243" alt="image" src="https://github.com/user-attachments/assets/5b1007c1-04a7-4e2a-931e-72ea6d809506" />
+
 *   **Insight:** The model completely failed to generalize to 3-digit numbers. The earlier success with `100+1` was likely a statistical fluke or a specific outcome of the randomized weights rather than true algorithmic understanding. The model has mastered rote memorization for the trained domain (0-99) but cannot extrapolate the addition algorithm to unseen inputs.
 
 ---
