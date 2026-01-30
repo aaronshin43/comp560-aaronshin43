@@ -23,6 +23,13 @@ This document records the detailed history, settings, and observations of experi
     *   Result: 99/100 Correct.
     *   Accuracy: **99.00%**
 
+### Train/Loss Graph
+<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/8e068168-cd60-4f5f-9ca1-00fa14ef529c" />
+
+### Val/Loss Graph
+<img width="494" height="343" alt="image" src="https://github.com/user-attachments/assets/83f2bbcd-53bb-438b-a118-13ec384dcce1" />
+
+
 ---
 
 ## Experiment 2: Intermediate (Two-Digit Addition)
