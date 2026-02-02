@@ -1,0 +1,5 @@
+{"input": "1+1", "output": "2"}
+{"input": "12+3", "output": "15"}
+{"input": "5+5", "output": "10"}
+{"input": "10+20", "output": "30"}
+{"input": "9+9", "output": "18"}
