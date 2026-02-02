@@ -1,0 +1,144 @@
+"""
+Generic Data Preparation Script for NanoGPT Experiments.
+
+This script reads a JSONL dataset, tokenizes it at the character level,
+and saves the training and validation data in binary format (.bin).
+It also generates a meta.pkl file containing the vocabulary.
+
+Protocol:
+- Input file must be JSONL with 'input' and 'output' fields.
+- Formats each sample as: {input}{sep}{output}{eos}
+"""
+
+import os
+import json
+import pickle
+import numpy as np
+import argparse
+import random
+
+def main():
+    parser = argparse.ArgumentParser(description="Prepare data for NanoGPT.")
+    parser.add_argument('--file', type=str, required=True, help='Path to input JSONL file')
+    parser.add_argument('--out_dir', type=str, required=True, help='Output directory for bin files')
+    parser.add_argument('--sep', type=str, default='=', help='Separator between input and output')
+    parser.add_argument('--eos', type=str, default='\n', help='End of sequence token')
+    parser.add_argument('--test_size', type=float, default=0.1, help='Fraction of data to use for validation (0.0 for no split/memorization)')
+    parser.add_argument('--shuffle', action='store_true', help='Shuffle data before splitting')
+
+    args = parser.parse_args()
+
+    # 1. Read Input Data
+    print(f"Reading data from {args.file}...")
+    dataset = []
+    with open(args.file, 'r', encoding='utf-8') as f:
+        for line in f:
+            if not line.strip(): continue
+            try:
+                obj = json.loads(line)
+                if 'input' not in obj or 'output' not in obj:
+                    print(f"Skipping invalid line (missing keys): {line.strip()}")
+                    continue
+                dataset.append(obj)
+            except json.JSONDecodeError:
+                print(f"Skipping invalid JSON: {line.strip()}")
+    
+    print(f"Loaded {len(dataset)} samples.")
+
+    # 2. Format Data
+    # Construct the full string: input + sep + output + eos
+    raw_data = ""
+    for sample in dataset:
+        full_str = f"{sample['input']}{args.sep}{sample['output']}{args.eos}"
+        raw_data += full_str
+    
+    print(f"Total characters in dataset: {len(raw_data)}")
+
+    # 3. Build Vocabulary (Character-level)
+    chars = sorted(list(set(raw_data)))
+    vocab_size = len(chars)
+    print(f"Unique characters: {vocab_size}")
+    print(f"Vocab: {''.join(chars)}")
+
+    # Create mappings
+    stoi = { ch:i for i,ch in enumerate(chars) }
+    itos = { i:ch for i,ch in enumerate(chars) }
+    
+    # 4. Split Train/Val
+    samples_str = []
+    for sample in dataset:
+        samples_str.append(f"{sample['input']}{args.sep}{sample['output']}{args.eos}")
+    
+    if args.shuffle:
+        random.shuffle(samples_str)
+
+    if args.test_size > 0:
+        num_val = int(len(samples_str) * args.test_size)
+        if num_val == 0 and len(samples_str) > 1:
+             num_val = 1
+             print(f"Warning: Dataset is very small. Forcing 1 validation sample.")
+        
+        # Slicing logic
+        if num_val == 0: # Case where len=1 and test_size small
+            train_samples = samples_str
+            val_samples = [] # Should ideally error out or just be 0
+        else:
+            train_samples = samples_str[:-num_val]
+            val_samples = samples_str[-num_val:]
+            
+        print(f"Split: {len(train_samples)} training samples, {len(val_samples)} validation samples.")
+    else:
+        # If test_size is 0, we use the FULL dataset for both train and val (Memorization task)
+        train_samples = samples_str
+        val_samples = samples_str
+        print(f"Split: Using full dataset ({len(train_samples)} samples) for both Train and Val (Memorization).")
+
+    train_data = "".join(train_samples)
+    val_data = "".join(val_samples)
+
+    # Encode finalized strings
+    train_ids = [stoi[c] for c in train_data]
+    val_ids = [stoi[c] for c in val_data]
+
+    print(f"Train tokens: {len(train_ids)}")
+    print(f"Val tokens: {len(val_ids)}")
+
+    # 6. Save Artifacts
+    if not os.path.exists(args.out_dir):
+        os.makedirs(args.out_dir)
+
+    # Save meta for tokenizer
+    meta = {
+        'vocab_size': vocab_size,
+        'itos': itos,
+        'stoi': stoi,
+        'sep': args.sep,
+        'eos': args.eos,
+    }
+    meta_path = os.path.join(args.out_dir, 'meta.pkl')
+    with open(meta_path, 'wb') as f:
+        pickle.dump(meta, f)
+    print(f"Saved meta.pkl to {meta_path}")
+
+    # Save bins
+    train_ids = np.array(train_ids, dtype=np.uint16)
+    val_ids = np.array(val_ids, dtype=np.uint16)
+    
+    train_bin_path = os.path.join(args.out_dir, 'train.bin')
+    val_bin_path = os.path.join(args.out_dir, 'val.bin')
+    
+    train_ids.tofile(train_bin_path)
+    val_ids.tofile(val_bin_path)
+    
+    print(f"Saved train.bin to {train_bin_path}")
+    print(f"Saved val.bin to {val_bin_path}")
+
+    print("\n" + "="*40)
+    print("READY FOR TRAINING")
+    print("Add these to your config.py:")
+    print(f"vocab_size = {vocab_size}")
+    print(f"block_size = {min(256, len(train_ids)//10)}") 
+    print("="*40 + "\n")
+
+if __name__ == '__main__':
+    main()
