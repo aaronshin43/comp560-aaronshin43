@@ -104,7 +104,7 @@ for i in range(num_samples):
     with torch.no_grad():
         # Using a slightly customized generate loop could be faster/cleaner to stop at \n
         # but for simplicity we use model.generate and then parse string
-        y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k)
+        y = model.generate(x, max_new_tokens, temperature=temperature, top_k=top_k, stop_token=stoi['\n'])
         
     output_str = decode(y[0].tolist())
     

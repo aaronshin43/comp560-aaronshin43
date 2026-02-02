@@ -40,6 +40,7 @@ compile = False
 # -----------------------------------------------------------------------------
 # Sampling config (for easy testing via basic.py style edit)
 start = "55+77="
-num_samples = 10
-max_new_tokens = 5
+stop_token = '\n'
+num_samples = 3
+max_new_tokens = 10
 seed = 1337
