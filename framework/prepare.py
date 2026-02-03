@@ -111,9 +111,7 @@ def main():
     meta = {
         'vocab_size': vocab_size,
         'itos': itos,
-        'stoi': stoi,
-        'sep': args.sep,
-        'eos': args.eos,
+        'stoi': stoi
     }
     meta_path = os.path.join(args.out_dir, 'meta.pkl')
     with open(meta_path, 'wb') as f:

@@ -28,8 +28,8 @@ n_embd = 120  # need n_embd % n_head == 0
 dropout = 0.0
 
 learning_rate = 1e-3 # with baby networks can afford to go a bit higher
-max_iters = 2000
-lr_decay_iters = 2000 # make equal to max_iters usually
+max_iters = 500
+lr_decay_iters = 500 # make equal to max_iters usually
 min_lr = 1e-4 # learning_rate / 10 usually
 beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
 
@@ -44,18 +44,10 @@ compile = False # do not torch compile the model
 
 # The starting string for generation (prompt)
 start = "52+12="
-num_samples = 3
-max_new_tokens = 100
-seed = 1337
-stop_token = '\n' # default stop token
 
-# Attempt to load stop_token from meta.pkl if available
-import os
-import pickle
-meta_path = os.path.join('data', dataset, 'meta.pkl')
-if os.path.exists(meta_path):
-    with open(meta_path, 'rb') as f:
-        meta = pickle.load(f)
-    if 'eos' in meta:
-        stop_token = meta['eos']
-        print(f"Loaded stop_token '{stop_token}' from {meta_path}")
+# The token ID or string that stops generation.
+stop_token = "\n"
+
+num_samples = 3
+max_new_tokens = 10
+seed = 1337

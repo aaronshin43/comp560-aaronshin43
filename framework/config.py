@@ -44,18 +44,10 @@ compile = False # do not torch compile the model
 
 # The starting string for generation (prompt)
 start = ""
-num_samples = 3
-max_new_tokens = 100
-seed = 1337
-stop_token = '\n' # default stop token
 
-# Attempt to load stop_token from meta.pkl if available
-import os
-import pickle
-meta_path = os.path.join('data', dataset, 'meta.pkl')
-if os.path.exists(meta_path):
-    with open(meta_path, 'rb') as f:
-        meta = pickle.load(f)
-    if 'eos' in meta:
-        stop_token = meta['eos']
-        print(f"Loaded stop_token '{stop_token}' from {meta_path}")
+# The token ID or string that stops generation.
+stop_token = "\n"
+
+num_samples = 3
+max_new_tokens = 10
+seed = 1337
