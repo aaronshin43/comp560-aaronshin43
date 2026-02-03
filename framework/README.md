@@ -54,7 +54,7 @@ Test the model with a prompt
 > **Important:** If you used a custom `--eos` during preparation (e.g., `";"`), make sure to update `stop_token = ';'` in your `config/your_experiment.py` before sampling.
 
 ```bash
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py --start="YourPrompt="
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py
 ```
 
 ## Quick Start (Example: 2-Digit Addition)
