@@ -42,14 +42,14 @@ def generate_addition_dataset(filename, num_digits=2, num_samples=None):
     print(f"Saved {len(data)} samples to {filename}")
 
 if __name__ == "__main__":
-    # Create examples directory if it doesn't exist
-    os.makedirs('examples/data', exist_ok=True)
+    # 1. 1-digit Addition (exhaustive) -> 100 samples
+    os.makedirs('data/addition_1digit', exist_ok=True)
+    generate_addition_dataset('data/addition_1digit/addition_1digit.jsonl', num_digits=1, num_samples=None)
     
-    # 1. Basic Addition (1-digit, exhaustive) -> 100 samples
-    generate_addition_dataset('examples/data/addition_basic.jsonl', num_digits=1, num_samples=None)
-    
-    # 2. Intermediate Addition (2-digit, exhaustive) -> 10000 samples
-    generate_addition_dataset('examples/data/addition_intermediate.jsonl', num_digits=2, num_samples=None)
+    # 2. 2-digit Addition (exhaustive) -> 10000 samples
+    os.makedirs('data/addition_2digit', exist_ok=True)
+    generate_addition_dataset('data/addition_2digit/addition_2digit.jsonl', num_digits=2, num_samples=None)
 
-    # 3. Large Random Addition (3-digit, 10000 random samples)
-    generate_addition_dataset('examples/data/addition_3digit_random.jsonl', num_digits=3, num_samples=10000)
+    # 3. 3-digit Random Addition (10000 random samples)
+    os.makedirs('data/addition_3digit', exist_ok=True)
+    generate_addition_dataset('data/addition_3digit/addition_3digit.jsonl', num_digits=3, num_samples=10000)
