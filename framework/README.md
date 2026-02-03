@@ -22,14 +22,18 @@ This section describes the standard workflow to run experiments.
 Convert your JSONL dataset into binary format using `prepare.py`.
 
 ```bash
-python prepare.py --file path/to/dataset.jsonl --out_dir data/my_experiment --sep "=" --eos "\n"
+# Uses default EOS ("\n") - Recommended for most cases
+python prepare.py --file path/to/dataset.jsonl --out_dir data/my_experiment
+
+# Uses custom EOS (e.g. ";") - Careful with shell escaping!
+python prepare.py --file path/to/dataset.jsonl --out_dir data/my_experiment --eos ";"
 ```
 
 **Arguments:**
 - `--file`: Path to input JSONL file.
 - `--out_dir`: Output directory for artifacts (`train.bin`, `meta.pkl`, etc).
-- `--sep`: Separator between input and output.
-- `--eos`: End-of-sequence token.
+- `--sep`: Separator between input and output (default: `"="`).
+- `--eos`: End-of-sequence token (default: `"\n"`). **Note:** If you use a custom EOS here, you must also update `stop_token` in your `config.py` later.
 - `--test_size`: Validation split ratio (default 0.1). Set to 0.0 for rote memorization.
 
 **Output Files:**
@@ -45,13 +49,13 @@ Run training using the standard nanoGPT script. Ensure `config.py` points to you
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config/your_experiment.py
 ```
 
-### 3. Sampling (Inference)
-Test the model with a prompt.
+### 3. Sampling
+Test the model with a prompt
+> **Important:** If you used a custom `--eos` during preparation (e.g., `";"`), make sure to update `stop_token = ';'` in your `config/your_experiment.py` before sampling.
 
 ```bash
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py --start="YourPrompt="
 ```
-
 
 ## Quick Start (Example: 2-Digit Addition)
 
