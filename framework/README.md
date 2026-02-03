@@ -71,10 +71,10 @@ Follow these steps to run the included addition example.
     python gen_addition.py
     ```
 
-2.  **Prepare Data (Protocol Encoding):**
+2.  **Prepare Data:**
     ```bash
     python prepare.py --file data/addition_2digit/addition_2digit.jsonl --out_dir data/addition_2digit
-    ``
+    ```
 
 4.  **Train:**
     ```bash
