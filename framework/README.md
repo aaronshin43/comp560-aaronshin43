@@ -68,32 +68,22 @@ Follow these steps to run the included addition example.
 
 1.  **Generate Data:**
     ```bash
-    python examples/gen_addition.py
+    python gen_addition.py
     ```
 
 2.  **Prepare Data (Protocol Encoding):**
     ```bash
-    python prepare.py --file examples/addition_intermediate.jsonl --out_dir data/addition_intermediate
+    python prepare.py --file data/addition_2digit/addition_2digit.jsonl --out_dir data/addition_2digit
+    ``
+
+4.  **Train:**
+    ```bash
+    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config/addition_2digit.py
     ```
 
-3.  **Change Directory (Just for Quickstart):**
+5. **Sample:**
     ```bash
-    cd examples
-    ```
-
-4.  **Configure:**
-    Update `config.py`:
-    - `dataset = 'addition_intermediate'`
-    - `out_dir = 'out/addition_intermediate'`
-
-5.  **Train:**
-    ```bash
-    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config.py
-    ```
-
-6. **Sample:**
-    ```bash
-    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_intermediate.py --start="12+34="
+    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_2digit.py
     ```
 
 ## Todo
