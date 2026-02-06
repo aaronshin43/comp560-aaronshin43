@@ -40,13 +40,11 @@ compile = False # do not torch compile the model
 
 ########################################################################
 ### sampling-specific params
-# init_from = 'resume' # either 'resume' (from an out_dir) or a gpt2 variant (e.g. 'gpt2-xl')
-
-# The starting string for generation (prompt)
-start = ""
-
 # The token ID or string that stops generation.
 stop_token = "\n"
+
+# The starting string for generation (prompt) 
+start = stop_token # or "1+1=" or etc. Can also specify a file, use as: "FILE:prompt.txt"
 
 num_samples = 3
 max_new_tokens = 10
