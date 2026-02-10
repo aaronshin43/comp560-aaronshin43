@@ -7,7 +7,7 @@ It also generates a meta.pkl file containing the vocabulary.
 
 Protocol:
 - Input file must be JSONL with 'input' and 'output' fields.
-- Formats each sample as: {input}{sep}{output}{eos}
+- Formats each sample as: {input}{sep}{output}{stop_token}
 """
 
 import os
@@ -46,10 +46,10 @@ def main():
     print(f"Loaded {len(dataset)} samples.")
 
     # 2. Format Data
-    # Construct the full string: input + sep + output + eos
+    # Construct the full string: input + sep + output + stop_token
     raw_data = ""
     for sample in dataset:
-        full_str = f"{sample['input']}{args.sep}{sample['output']}{args.eos}"
+        full_str = f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}"
         raw_data += full_str
     
     print(f"Total characters in dataset: {len(raw_data)}")
