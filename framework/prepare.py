@@ -22,7 +22,7 @@ def main():
     parser.add_argument('--file', type=str, required=True, help='Path to input JSONL file')
     parser.add_argument('--out_dir', type=str, required=True, help='Output directory for bin files')
     parser.add_argument('--sep', type=str, default='=', help='Separator between input and output')
-    parser.add_argument('--stop_token', type=str, default='\n', help='Token to stop generation (EOS)')
+    parser.add_argument('--stop_token', type=str, default='\n', help='Token indicating end of a sample (EOS)')
     parser.add_argument('--test_size', type=float, default=0.1, help='Fraction of data to use for validation (0.0 for no split/memorization)')
     parser.add_argument('--shuffle', action='store_true', help='Shuffle data before splitting')
 
