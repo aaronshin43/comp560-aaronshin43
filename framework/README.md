@@ -25,7 +25,7 @@ Convert your JSONL dataset into binary format using `prepare.py`.
 # Uses default stop_token ("\n") - Recommended for most cases
 python prepare.py --file=path/to/dataset.jsonl --out_dir=data/my_experiment
 
-# Uses custom stop_token (e.g. ";") - Careful with shell escaping!
+# Uses custom stop_token (e.g. ";") - Careful with shell escaping! (See Tip below in Sampling section)
 python prepare.py --file=path/to/dataset.jsonl --out_dir=data/my_experiment --stop_token=";"
 ```
 
@@ -33,14 +33,14 @@ python prepare.py --file=path/to/dataset.jsonl --out_dir=data/my_experiment --st
 - `--file`: Path to input JSONL file.
 - `--out_dir`: Output directory for artifacts (`train.bin`, `meta.pkl`, etc).
 - `--sep`: Separator between input and output (default: `"="`).
-- `--stop_token`: Token to stop generation (default: `"\n"`). **Note:** If you use a custom token here, you must also update `stop_token` in your `config.py` later.
+- `--stop_token`: Token indicating end of a sample (default: `"\n"`). **Note:** This token is used to mark the end of each sample in the dataset.
 - `--test_size`: Validation split ratio (default 0.1). Set to 0.0 for rote memorization.
 
 **Output Files:**
 The script generates the following in the `out_dir`:
 - `train.bin`: Training data (uint16).
 - `val.bin`: Validation data (uint16).
-- `meta.pkl`: Pickled dictionary containing `stoi` (string-to-int) and `itos` (int-to-string), `sep`, and `eos`.
+- `meta.pkl`: Pickled dictionary containing `stoi` (string-to-int) and `itos` (int-to-string).
 
 ### 2. Training
 Run training using the standard nanoGPT script. Ensure `config.py` points to your `out_dir`.
@@ -52,15 +52,22 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGP
 ### 3. Sampling
 Test the model with a prompt. You can override `start` and `stop_token` from the command line.
 
-> **Important:** If you used a custom `--stop_token` during preparation (e.g., `";"`), you must provide it here as well (or update your config file).
+> **Important:** The default `stop_token` is empty. If you want the model to stop generating at a specific token (e.g., your custom EOS `;`), enable it by passing `--stop_token=";"`.
+>
+> **Note on `start`:** The default `start` prompt is `"\n"`. If you are using a custom `stop_token` to delimit samples, you typically want generation to start *after* that delimiter. So, you should also override `start` to match your delimiter (e.g., `--start=";"`) or provide a specific prompt (`--start="1+1"`).
 
 ```bash
-# Basic usage (uses defaults from config.py)
+# Basic usage (no early stopping, generates until max tokens)
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py
 
-# Override prompt and stop_token
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py --start="5+5=" --stop_token=";"
+# Enable early stopping with custom token.
+# Also updating 'start' to match the custom delimiter ';'.
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py --start=";" --stop_token=";"
 ```
+
+> **Tip (Shell Escaping):** Passing special characters like newline (`\n`) via command line requires specific escaping depending on your shell.
+> *   **Git Bash (Windows):** Use `--stop_token=$'\n'`
+> *   **PowerShell:** Use `` --stop_token="`n" `` (backtick n)
 
 ## Quick Start (Example: 2-Digit Addition)
 
@@ -81,18 +88,17 @@ Follow these steps to run the included addition example.
     python prepare.py --file data/addition_2digit/addition_2digit.jsonl --out_dir data/addition_2digit
     ```
 
-4.  **Train:**
+3.  **Train:**
     ```bash
     NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config/addition_2digit.py
     ```
 
-5. **Sample:**
+4. **Sample:**
     ```bash
     NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_2digit.py
     ```
 
-## Todo
-- [ ] If we want to let users sample continuous output without `stop_token`, we want to initialize `stop_token=None`. But if we do this, in `configurator.py` on line 42, the type check throws AssertionError when user overrides `stop_token` in command-line. The easiest approach is either having default `stop_token` value such as `\n` or forcing users only to override `stop_token` in their config file. 
-- [ ] Research about how train/loss val/loss is evaluated (Check if inputs are considered as well)
-- [ ] If input are considered, figure out way to only evaluate on outputs 
-- [ ] Implement evaluation script 
+5. **Sample with Early Stopping:**
+    ```bash
+    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_2digit.py --start="12+34" --stop_token=$'\n'
+    ```
