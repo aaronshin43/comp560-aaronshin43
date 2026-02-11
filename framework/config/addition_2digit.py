@@ -41,7 +41,7 @@ compile = False # do not torch compile the model
 ########################################################################
 ### sampling-specific params
 # The starting string for generation (prompt)
-start = '\n' # or "1+1=" or etc. Can also specify a file, use as: "FILE:prompt.txt"
+start = '\n' # or "1+1" or etc. Can also specify a file, use as: "FILE:prompt.txt"
 
 # The token ID or string that stops generation.
 stop_token = ""
