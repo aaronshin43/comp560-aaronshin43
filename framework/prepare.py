@@ -47,10 +47,11 @@ def main():
 
     # 2. Format Data
     # Construct the full string: input + sep + output + stop_token
-    raw_data = ""
+    samples_str = []
     for sample in dataset:
-        full_str = f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}"
-        raw_data += full_str
+        samples_str.append(f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}")
+    
+    raw_data = "".join(samples_str)
     
     print(f"Total characters in dataset: {len(raw_data)}")
 
@@ -65,10 +66,6 @@ def main():
     itos = { i:ch for i,ch in enumerate(chars) }
 
     # 4. Split Train/Val
-    samples_str = []
-    for sample in dataset:
-        samples_str.append(f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}")
-    
     if args.shuffle:
         random.shuffle(samples_str)
 
