@@ -20,7 +20,7 @@ import random
 def main():
     parser = argparse.ArgumentParser(description="Prepare data for NanoGPT.")
     parser.add_argument('--file', type=str, required=True, help='Path to input JSONL file')
-    parser.add_argument('--out_dir', type=str, required=True, help='Output directory for bin files')
+    parser.add_argument('--out_dir', type=str, help='Output directory for bin files (default: same as input file directory)')
     parser.add_argument('--sep', type=str, default='=', help='Separator between input and output')
     parser.add_argument('--stop_token', type=str, default='\n', help='Token indicating end of a sample (EOS)')
     parser.add_argument('--test_size', type=float, default=0.1, help='Fraction of data to use for validation (0.0 for no split/memorization)')
@@ -28,6 +28,12 @@ def main():
 
     args = parser.parse_args()
 
+    # Determine output directory if not provided
+    if args.out_dir is None:
+        args.out_dir = os.path.dirname(args.file)
+        if args.out_dir == '':
+            args.out_dir = '.'
+    
     # 1. Read Input Data
     print(f"Reading data from {args.file}...")
     dataset = []
