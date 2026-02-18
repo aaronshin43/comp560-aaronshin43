@@ -47,5 +47,5 @@ start = '\n' # or "1+1" or etc. Can also specify a file, use as: "FILE:prompt.tx
 stop_token = ""
 
 num_samples = 1
-max_new_tokens = 10
+max_new_tokens = 50
 seed = 1337
