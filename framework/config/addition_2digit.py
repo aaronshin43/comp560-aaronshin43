@@ -13,8 +13,8 @@ always_save_checkpoint = False
 
 # Weights & Biases logging
 wandb_log = False # set to True to enable logging to wandb
-wandb_project = 'shina-addition-basic'
-wandb_run_name = 'test5-increment-batch-size'
+wandb_project = 'your-wandb-project'
+wandb_run_name = 'your-wandb-run-name'
 
 dataset = 'addition_2digit'
 gradient_accumulation_steps = 1
@@ -47,5 +47,5 @@ start = '\n' # or "1+1" or etc. Can also specify a file, use as: "FILE:prompt.tx
 stop_token = ""
 
 num_samples = 1
-max_new_tokens = 50
+max_new_tokens = 10
 seed = 1337
