@@ -4,6 +4,19 @@ This repo contains Aaron Shin's experiments for the COMP560 research project.
 
 ## Installation
 
+### 0. Virtual Environment (Recommended)
+It is recommended to use a virtual environment to manage dependencies locally.
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows)
+venv\Scripts\activate
+
+# Activate (Mac/Linux)
+source venv/bin/activate
+```
+
 ### 1. Install Dependencies
 ```bash
 pip install numpy transformers datasets tiktoken wandb tqdm
@@ -30,4 +43,4 @@ Experiments in learning the mapping between English text and Morse code sequence
 A specific application focusing on teaching a transformer model to perform arithmetic addition through simple prompt-response pairs.
 
 ### 3. [Short Input/Output Framework](framework/README.md)
-A standardized framework designed for experiments mapping short inputs to short outputs. It simplifies data preparation and training for tasks like arithmetic, logic gates, and simple Q&A.
+A standardized framework designed for experiments mapping short inputs to short outputs. It simplifies data preparation, training, and sampling for tasks like arithmetic, logic gates, and simple Q&A.
