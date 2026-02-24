@@ -73,7 +73,11 @@ def main():
 
     # 4. Split Train/Val
     if args.shuffle:
-        random.shuffle(samples_str)
+        combined = list(zip(dataset, samples_str))
+        random.shuffle(combined)
+        dataset, samples_str = zip(*combined)
+        dataset = list(dataset)
+        samples_str = list(samples_str)
 
     if args.test_size > 0:
         num_val = int(len(samples_str) * args.test_size)
@@ -84,16 +88,22 @@ def main():
         # Slicing logic
         if num_val == 0: # Case where len=1 and test_size small
             train_samples = samples_str
-            val_samples = [] # Should ideally error out or just be 0
+            val_samples = []
+            train_dataset = dataset
+            val_dataset = []
         else:
             train_samples = samples_str[:-num_val]
             val_samples = samples_str[-num_val:]
+            train_dataset = dataset[:-num_val]
+            val_dataset = dataset[-num_val:]
             
         print(f"Split: {len(train_samples)} training samples, {len(val_samples)} validation samples.")
     else:
         # If test_size is 0, we use the FULL dataset for both train and val (Memorization task)
         train_samples = samples_str
         val_samples = samples_str
+        train_dataset = dataset
+        val_dataset = dataset
         print(f"Split: Using full dataset ({len(train_samples)} samples) for both Train and Val (Memorization).")
 
     train_data = "".join(train_samples)
@@ -130,9 +140,17 @@ def main():
     
     train_ids.tofile(train_bin_path)
     val_ids.tofile(val_bin_path)
-    
-    print(f"Saved train.bin to {train_bin_path}")
-    print(f"Saved val.bin to {val_bin_path}")
+
+    # Save raw JSONL splits for evaluation
+    train_jsonl_path = os.path.join(args.out_dir, 'train.jsonl')
+    with open(train_jsonl_path, 'w', encoding='utf-8') as f:
+        for item in train_dataset:
+            f.write(json.dumps(item) + '\n')
+
+    val_jsonl_path = os.path.join(args.out_dir, 'val.jsonl')
+    with open(val_jsonl_path, 'w', encoding='utf-8') as f:
+        for item in val_dataset:
+            f.write(json.dumps(item) + '\n')
 
 if __name__ == '__main__':
     main()
