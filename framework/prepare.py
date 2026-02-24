@@ -134,12 +134,5 @@ def main():
     print(f"Saved train.bin to {train_bin_path}")
     print(f"Saved val.bin to {val_bin_path}")
 
-    print("\n" + "="*40)
-    print("READY FOR TRAINING")
-    print("Add these to your config.py:")
-    print(f"vocab_size = {vocab_size}")
-    print(f"block_size = {min(256, len(train_ids)//10)}") 
-    print("="*40 + "\n")
-
 if __name__ == '__main__':
     main()
