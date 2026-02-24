@@ -23,15 +23,15 @@ Convert your JSONL dataset into binary format using `prepare.py`.
 
 ```bash
 # Uses default stop_token ("\n") - Recommended for most cases
-python prepare.py --file=path/to/dataset.jsonl --out_dir=data/my_experiment
+python prepare.py --file=path/to/dataset.jsonl
 
 # Uses custom stop_token (e.g. ";") - Careful with shell escaping! (See Tip below in Sampling section)
-python prepare.py --file=path/to/dataset.jsonl --out_dir=data/my_experiment --stop_token=";"
+python prepare.py --file=path/to/dataset.jsonl --stop_token=";"
 ```
 
 **Arguments:**
 - `--file`: Path to input JSONL file.
-- `--out_dir`: Output directory for artifacts (`train.bin`, `meta.pkl`, etc).
+- `--out_dir`: Output directory for artifacts (default: same directory as input file).
 - `--sep`: Separator between input and output (default: `"="`).
 - `--stop_token`: Token indicating end of a sample (default: `"\n"`). **Note:** This token is used to mark the end of each sample in the dataset.
 - `--test_size`: Validation split ratio (default 0.1). Set to 0.0 for rote memorization.
@@ -85,7 +85,7 @@ Follow these steps to run the included addition example.
 
 2.  **Prepare Data:**
     ```bash
-    python prepare.py --file data/addition_2digit/addition_2digit.jsonl --out_dir data/addition_2digit
+    python prepare.py --file data/addition_2digit/addition_2digit.jsonl
     ```
 
 3.  **Train:**

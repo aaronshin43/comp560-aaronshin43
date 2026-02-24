@@ -46,6 +46,6 @@ start = '\n' # or "1+1" or etc. Can also specify a file, use as: "FILE:prompt.tx
 # The token ID or string that stops generation.
 stop_token = ""
 
-num_samples = 3
-max_new_tokens = 10
+num_samples = 1
+max_new_tokens = 50
 seed = 1337

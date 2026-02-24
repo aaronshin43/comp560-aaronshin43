@@ -20,7 +20,7 @@ import random
 def main():
     parser = argparse.ArgumentParser(description="Prepare data for NanoGPT.")
     parser.add_argument('--file', type=str, required=True, help='Path to input JSONL file')
-    parser.add_argument('--out_dir', type=str, required=True, help='Output directory for bin files')
+    parser.add_argument('--out_dir', type=str, help='Output directory for bin files (default: same as input file directory)')
     parser.add_argument('--sep', type=str, default='=', help='Separator between input and output')
     parser.add_argument('--stop_token', type=str, default='\n', help='Token indicating end of a sample (EOS)')
     parser.add_argument('--test_size', type=float, default=0.1, help='Fraction of data to use for validation (0.0 for no split/memorization)')
@@ -28,6 +28,12 @@ def main():
 
     args = parser.parse_args()
 
+    # Determine output directory if not provided
+    if args.out_dir is None:
+        args.out_dir = os.path.dirname(args.file)
+        if args.out_dir == '':
+            args.out_dir = '.'
+    
     # 1. Read Input Data
     print(f"Reading data from {args.file}...")
     dataset = []
@@ -47,10 +53,11 @@ def main():
 
     # 2. Format Data
     # Construct the full string: input + sep + output + stop_token
-    raw_data = ""
+    samples_str = []
     for sample in dataset:
-        full_str = f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}"
-        raw_data += full_str
+        samples_str.append(f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}")
+    
+    raw_data = "".join(samples_str)
     
     print(f"Total characters in dataset: {len(raw_data)}")
 
@@ -65,10 +72,6 @@ def main():
     itos = { i:ch for i,ch in enumerate(chars) }
 
     # 4. Split Train/Val
-    samples_str = []
-    for sample in dataset:
-        samples_str.append(f"{sample['input']}{args.sep}{sample['output']}{args.stop_token}")
-    
     if args.shuffle:
         random.shuffle(samples_str)
 
@@ -130,13 +133,6 @@ def main():
     
     print(f"Saved train.bin to {train_bin_path}")
     print(f"Saved val.bin to {val_bin_path}")
-
-    print("\n" + "="*40)
-    print("READY FOR TRAINING")
-    print("Add these to your config.py:")
-    print(f"vocab_size = {vocab_size}")
-    print(f"block_size = {min(256, len(train_ids)//10)}") 
-    print("="*40 + "\n")
 
 if __name__ == '__main__':
     main()

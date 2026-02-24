@@ -12,9 +12,9 @@ log_interval = 1
 always_save_checkpoint = False
 
 # Weights & Biases logging
-wandb_log = True # set to True to enable logging to wandb
-wandb_project = 'shina-addition-intermediate'
-wandb_run_name = '2digit-5000iters-50sample-greedy'
+wandb_log = False # set to True to enable logging to wandb
+wandb_project = 'your-wandb-project'
+wandb_run_name = 'your-wandb-run-name'
 
 dataset = 'addition_2digit'
 gradient_accumulation_steps = 1
