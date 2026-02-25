@@ -71,10 +71,11 @@ def main():
     stoi = { ch:i for i,ch in enumerate(chars) }
     itos = { i:ch for i,ch in enumerate(chars) }
 
-    # 4. Split Train/Val
+    # Shuffle Data
     if args.shuffle:
         random.shuffle(samples_str)
 
+    # 4. Split Train/Val
     if args.test_size > 0:
         num_val = int(len(samples_str) * args.test_size)
         if num_val == 0 and len(samples_str) > 1:
@@ -119,7 +120,6 @@ def main():
     meta_path = os.path.join(args.out_dir, 'meta.pkl')
     with open(meta_path, 'wb') as f:
         pickle.dump(meta, f)
-    print(f"Saved meta.pkl to {meta_path}")
 
     # Save bins
     train_ids = np.array(train_ids, dtype=np.uint16)
@@ -130,9 +130,6 @@ def main():
     
     train_ids.tofile(train_bin_path)
     val_ids.tofile(val_bin_path)
-    
-    print(f"Saved train.bin to {train_bin_path}")
-    print(f"Saved val.bin to {val_bin_path}")
 
 if __name__ == '__main__':
     main()

@@ -35,6 +35,7 @@ python prepare.py --file=path/to/dataset.jsonl --stop_token=";"
 - `--sep`: Separator between input and output (default: `"="`).
 - `--stop_token`: Token indicating end of a sample (default: `"\n"`). **Note:** This token is used to mark the end of each sample in the dataset.
 - `--test_size`: Validation split ratio (default 0.1). Set to 0.0 for rote memorization.
+- `--shuffle`: Shuffle data before splitting (default: False). Helpful if your JSONL file is ordered.
 
 **Output Files:**
 The script generates the following in the `out_dir`:
