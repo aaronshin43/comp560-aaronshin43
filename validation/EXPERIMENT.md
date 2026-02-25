@@ -28,7 +28,7 @@ The first experiment tested the masking logic within a highly constrained contex
     * Applying the target mask drastically reduced the loss, yet the exact match accuracy dropped.
     * This paradox was caused by sequence truncation. With `block_size=16`, many blocks begin mid-equation. The masking logic misinterprets these fragmented sequences and incorrectly masks the *actual target tokens* with `-1`.
     * The model effectively suffered from data loss. The loss value appeared lower simply because the model was being evaluated on far fewer tokens per block, creating an illusion of improvement.
-    * **AR Test Performance:** Contrary to the expectation that target masking should improve AR generation (as demonstrated in Experiment 2), the masked model scored *lower* on the AR test (78.8% / 79.1%) than the unmasked model (87.9% / 89.8%). This is a direct consequence of the same truncation bug: the model trained with a broken mask learned from corrupted supervision signals — actual answer tokens were silenced, leaving the model to optimize over fragmented, context-incomplete blocks. The result is a model that is demonstrably *less capable* of autoregressive generation, confirming that the root cause is faulty masking logic rather than any fundamental limitation of the masking approach itself.
+    * **Autoregressive (AR) Test Performance:** Contrary to the expectation that target masking should improve AR generation (as demonstrated in Experiment 2), the masked model scored *lower* on the AR test (78.8% / 79.1%) than the unmasked model (87.9% / 89.8%). This is a direct consequence of the same truncation bug: the model trained with a broken mask learned from corrupted supervision signals — actual answer tokens were silenced, leaving the model to optimize over fragmented, context-incomplete blocks. The result is a model that is demonstrably *less capable* of autoregressive generation, confirming that the root cause is faulty masking logic rather than any fundamental limitation of the masking approach itself.
 
 ## 3. Experiment 2: The `block_size=64` Resolution
 
@@ -48,7 +48,7 @@ To resolve the truncation edge cases, `block_size` was increased to 64, allowing
 
 * **Analysis (The AR Collapse without Masking):**
     * With a larger block size, the model observes a continuous stream of multiple equations. Without masking, it expends parameter capacity attempting to predict the arbitrary numbers of the *next* equation in the sequence.
-    * When tested in a true Autoregressive (AR) environment (where it is only prompted with a single `1+1=`), the unmasked model is destabilized by the absence of continuous streaming context, leading to poor generation accuracy.
+    * When tested in a AR environment, the unmasked model is destabilized by the absence of continuous streaming context, leading to poor generation accuracy.
     * Conversely, **Target Masking** forces the model to disregard input distributions entirely. It directs its capacity exclusively toward computing the correct output after the `=` token. This prevents overfitting to the concatenated training stream and yields highly stable, superior performance during AR generation.
 
 ## 4. The Loss vs. Exact Match Paradox
