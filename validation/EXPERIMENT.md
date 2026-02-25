@@ -19,7 +19,7 @@ The first experiment tested the masking logic within a highly constrained contex
 * **Observation:**
 
 | Configuration | Train Loss | Val Loss | Train TF Match | Val TF Match | Train AR Test | Val AR Test |
-|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | No Mask | 0.989 | 1.160 | 89.3% | 92.2% | 87.9% | 89.8% |
 | Target Mask | 0.989 | 1.160 | 83.1% | 84.1% | 78.8% | 79.1% |
 
@@ -67,6 +67,10 @@ To directly verify the edge case hypothesis proposed in Section 4, the same `blo
 **[Graph 2 — Title: "TF Exact Match (Val) — No Mask vs. Target Mask (block_size=64, 8:2 Split)"]**
 
 * **Observation:**
+
+| Configuration | Train Loss | Val Loss | Train TF Match | Val TF Match | Train AR Test | Val AR Test |
+|---|---|---|---|---|---|---|
+| No Mask | 0.982 | 1.170 | 88.0% | 86.6% | 80.1% | 78.4% |
 | Target Mask | 0.121 | 0.125 | 89.2% | 88.4% | 87.4% | 86.9% |
 
 * **Analysis (Edge Case Distribution as the Confounding Variable):**
