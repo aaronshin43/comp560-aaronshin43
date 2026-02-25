@@ -3,7 +3,7 @@
 # Dataset: 10,000 samples total, ~9,000 train / ~1,000 val
 
 # out_dir must match the directory where you want checkpoints saved
-out_dir = 'out/addition_2digit/test'
+out_dir = 'out/addition_2digit/target_mask'
 eval_interval = 500
 eval_iters = 100   # enough iters for a stable loss estimate over ~1000 val samples
 
@@ -27,8 +27,8 @@ n_embd = 128  # need n_embd % n_head == 0
 dropout = 0.0  # deterministic task; dropout hurts more than it helps here
 
 learning_rate = 3e-4  # slightly conservative for stable convergence
-max_iters = 3000
-lr_decay_iters = 3000  # make equal to max_iters usually
+max_iters = 5000
+lr_decay_iters = 5000  # make equal to max_iters usually
 min_lr = 3e-5  # learning_rate / 10
 beta2 = 0.99   # good for small token-per-iter counts
 
