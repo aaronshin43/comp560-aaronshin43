@@ -1,38 +1,39 @@
 # train a miniature character-level model
-# for 2-digit addition (0+0 to 99+99, max sequence: "99+99=198\n" = 10 chars)
-# Dataset: 10,000 samples total, ~9,000 train / ~1,000 val
+# for single digit addition
+# This will be good for testing simple prompt-response behavior
 
 # out_dir must match the directory where you want checkpoints saved
 out_dir = 'out/addition_2digit'
-eval_interval = 500
-eval_iters = 100   # enough iters for a stable loss estimate over ~1000 val samples
+eval_interval = 50 
+eval_iters = 20
+log_interval = 1 
 
 # we expect to overfit on this small dataset, so only save when val improves
 always_save_checkpoint = False
 
 # Weights & Biases logging
-wandb_log = True # set to True to enable logging to wandb
-wandb_project = 'accuracy_benchmark'
-wandb_run_name = 'addition_2digit_100evalsample'
+wandb_log = False # set to True to enable logging to wandb
+wandb_project = 'your-wandb-project'
+wandb_run_name = 'your-wandb-run-name'
 
 dataset = 'addition_2digit'
 gradient_accumulation_steps = 1
-batch_size = 128
-block_size = 16
+batch_size = 32
+block_size = 128
 
-# small GPT model - 2-digit addition requires carry logic, so slightly deeper than 1-digit
-n_layer = 6
+# very very small GPT model
+n_layer = 4
 n_head = 4
 n_embd = 128  # need n_embd % n_head == 0
-dropout = 0.0  # deterministic task; dropout hurts more than it helps here
+dropout = 0.0
 
-learning_rate = 3e-4  # slightly conservative for stable convergence
+learning_rate = 1e-3 # with baby networks can afford to go a bit higher
 max_iters = 5000
-lr_decay_iters = 5000  # make equal to max_iters usually
-min_lr = 3e-5  # learning_rate / 10
-beta2 = 0.99   # good for small token-per-iter counts
+lr_decay_iters = 5000 # make equal to max_iters usually
+min_lr = 1e-4 # learning_rate / 10 usually
+beta2 = 0.99 # make a bit bigger because number of tokens per iter is small
 
-warmup_iters = 200
+warmup_iters = 100 # 100 # not super necessary potentially
 
 # device = 'cpu'  # run on cpu only
 compile = False # do not torch compile the model
@@ -46,5 +47,5 @@ start = '\n' # or "1+1" or etc. Can also specify a file, use as: "FILE:prompt.tx
 stop_token = "\n"
 
 num_samples = 1
-max_new_tokens = 5
+max_new_tokens = 50
 seed = 1337
