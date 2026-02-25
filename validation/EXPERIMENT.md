@@ -21,7 +21,7 @@ The first experiment tested the masking logic within a highly constrained contex
 | Configuration | Train Loss | Val Loss | Train TF Match | Val TF Match | Train AR Test | Val AR Test |
 |---|---|---|---|---|---|---|
 | No Mask | 0.989 | 1.160 | 89.3% | 92.2% | 87.9% | 89.8% |
-| Target Mask | 0.989 | 1.160 | 83.1% | 84.1% | 78.8% | 79.1% |
+| Target Mask | 0.531 | 0.541 | 83.1% | 84.1% | 78.8% | 79.1% |
 
 
 * **Analysis (Loss vs Accuracy):**
