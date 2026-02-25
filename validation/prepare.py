@@ -71,7 +71,7 @@ def main():
     stoi = { ch:i for i,ch in enumerate(chars) }
     itos = { i:ch for i,ch in enumerate(chars) }
 
-    # 4. Split Train/Val
+    # Shuffle Data
     if args.shuffle:
         combined = list(zip(dataset, samples_str))
         random.shuffle(combined)
@@ -79,6 +79,7 @@ def main():
         dataset = list(dataset)
         samples_str = list(samples_str)
 
+    # 4. Split Train/Val
     if args.test_size > 0:
         num_val = int(len(samples_str) * args.test_size)
         if num_val == 0 and len(samples_str) > 1:
