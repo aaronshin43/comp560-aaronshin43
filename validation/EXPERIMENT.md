@@ -12,9 +12,9 @@
 
 The first experiment tested the masking logic within a highly constrained context window.
 
-**[Graph 1 — Title: "Train / Val Loss — No Mask vs. Target Mask (block_size=16)"]**
+<img width="500" height="333" alt="Train / Val Loss — No Mask vs. Target Mask (block_size=16)" src="https://github.com/user-attachments/assets/20e508a9-6416-492b-9fca-2367b4ca1372" /> 
 
-**[Graph 2 — Title: "TF Exact Match — No Mask vs. Target Mask (block_size=16)"]**
+<img width="500" height="333" alt="TF Exact Match — No Mask vs. Target Mask (block_size=16)" src="https://github.com/user-attachments/assets/d5ed6761-9506-4941-a344-f06be5e34ff5" />
 
 * **Observation:**
 
@@ -34,9 +34,9 @@ The first experiment tested the masking logic within a highly constrained contex
 
 To resolve the truncation edge cases, `block_size` was increased to 64, allowing the model to process multiple complete equations per forward pass.
 
-**[Graph 1 — Title: "Train / Val Loss — No Mask vs. Target Mask (block_size=64)"]**
+<img width="500" height="333" alt="Train / Val Loss — No Mask vs. Target Mask (block_size=64)" src="https://github.com/user-attachments/assets/c9961cc1-491e-4a77-932e-4bfc0994ae03" />
 
-**[Graph 2 — Title: "Autoregressive Accuracy — No Mask vs. Target Mask (block_size=64)"]**
+<img width="500" height="333" alt="Autoregressive Accuracy — No Mask vs. Target Mask (block_size=64)" src="https://github.com/user-attachments/assets/548a3386-cce2-4da0-a264-98861a8fafbe" />
 
 * **Observation:**
 
@@ -53,7 +53,7 @@ To resolve the truncation edge cases, `block_size` was increased to 64, allowing
 
 ## 4. The Loss vs. Exact Match Paradox
 
-A consistent anomaly was observed across all test runs: **Train Loss was always lower (better) than Val Loss, yet Train Exact Match (TF Eval) was consistently lower (worse) than Val Exact Match.** After verifying the evaluation logic, this was confirmed to be a mathematically sound phenomenon driven by the difference in metric mechanics and dataset scale:
+A consistent anomaly was observed across all test runs: **Train Loss was always lower (better) than Val Loss, yet Train Exact Match (TF Eval) was occasionally lower (worse) than Val Exact Match.** After verifying the evaluation logic, this was confirmed to be a mathematically sound phenomenon driven by the difference in metric mechanics and dataset scale:
 
 * **Confidence (Continuous) vs. Perfection (Discrete):** Cross-Entropy Loss measures average predictive confidence, whereas Exact Match requires 100% sequence perfection. The model exhibits high overall confidence across the vast training data (yielding low Train Loss). However, making even a single-token mistake on an equation zeroes out the Exact Match score.
 * **Scale and Edge Cases:** The Train set (9,000 samples) is nine times larger than the Val set (1,000 samples). Statistically, the massive Train set contains a significantly higher volume of extreme "edge cases" (e.g., highly complex multi-digit carryovers). Failing these complex cases drops the overall Train Exact Match percentage. Meanwhile, the smaller Val set randomly sampled a slightly more uniform distribution, allowing for a higher exact match rate despite lower average confidence (higher Val Loss).
@@ -62,9 +62,7 @@ A consistent anomaly was observed across all test runs: **Train Loss was always 
 
 To directly verify the edge case hypothesis proposed in Section 4, the same `block_size=64` setup from Experiment 2 was reused, with only the dataset split ratio changed from **9:1 to 8:2** (8,000 Train / 2,000 Val).
 
-**[Graph 1 — Title: "TF Exact Match (Train) — No Mask vs. Target Mask (block_size=64, 8:2 Split)"]**
-
-**[Graph 2 — Title: "TF Exact Match (Val) — No Mask vs. Target Mask (block_size=64, 8:2 Split)"]**
+<img width="500" height="333" alt="TF Exact Match — No Mask vs. Target Mask (block_size=64, 8:2 Split)" src="https://github.com/user-attachments/assets/cce58bff-877e-4c22-860e-e9a04c755122" />
 
 * **Observation:**
 
