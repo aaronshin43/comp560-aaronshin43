@@ -7,6 +7,6 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGP
 
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train_benchmark.py config/addition_2digit.py --enable_tf_eval=True --benchmark_target="both" --tf_eval_max_samples=1000 --target_mask=True
 
-# Autoagressive evaluation
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_gen.py config/addition_2digit.py --benchmark_target="both" --eval_max_samples=1000
+# Autoregressive evaluation
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_generation.py config/addition_2digit.py --benchmark_target="both" --eval_max_samples=1000
 ```
