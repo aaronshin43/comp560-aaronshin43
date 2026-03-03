@@ -1,104 +1,76 @@
-# Framework for NanoGPT Experiments
+# Validation: Target Masking & Context Window Experiments
 
-This framework standardizes the data preparation process for "Short Input -> Short Output" experiments (e.g., arithmetic, logic gates, simple Q&A).
+This directory contains the experiment configuration and scripts for validating the impact of **target masking** and **context window size (`block_size`)** on training efficiency and true autoregressive (AR) generation performance.
 
-## Data Protocol (Input Format)
+For full experimental results, observations, and analysis, see [EXPERIMENT.md](EXPERIMENT.md).
 
-To evaluate a new task, provide a valid **JSONL (JSON Lines)** file.
-Each line must be a valid JSON object containing `"input"` and `"output"` keys.
+---
 
-**Example `dataset.jsonl`:**
-```json
-{"input": "12+34", "output": "46"}
-{"input": "5+5", "output": "10"}
-```
+## Overview
 
-## Workflow
+The experiments use a 2-digit arithmetic dataset (`input: "12+34"`, `output: "46"`) and evaluate two dimensions:
 
-This section describes the standard workflow to run experiments.
-> **Note:** Ensure you are in the `framework` directory for all commands.
+1. **Target Masking** — whether the cross-entropy loss is restricted to output tokens only (via `ignore_index=-1`), or computed over the full sequence.
+2. **Context Window** — whether `block_size=16` (truncation-prone) or `block_size=64` (full-equation) is used.
 
-### 1. Data Preparation
-Convert your JSONL dataset into binary format using `prepare.py`.
+Training is run via `train_benchmark.py`, a superset of the standard `train.py` that adds target masking, Teacher Forcing (TF) exact-match evaluation, and optional early stopping. AR generation accuracy is evaluated separately via `eval_generation.py`.
 
-```bash
-# Uses default stop_token ("\n") - Recommended for most cases
-python prepare.py --file=path/to/dataset.jsonl
+---
 
-# Uses custom stop_token (e.g. ";") - Careful with shell escaping! (See Tip below in Sampling section)
-python prepare.py --file=path/to/dataset.jsonl --stop_token=";"
-```
+## Reproducing the Experiments
 
-**Arguments:**
-- `--file`: Path to input JSONL file.
-- `--out_dir`: Output directory for artifacts (default: same directory as input file).
-- `--sep`: Separator between input and output (default: `"="`).
-- `--stop_token`: Token indicating end of a sample (default: `"\n"`). **Note:** This token is used to mark the end of each sample in the dataset.
-- `--test_size`: Validation split ratio (default 0.1). Set to 0.0 for rote memorization.
+> **Note:** All commands should be run from the `validation/` directory.
 
-**Output Files:**
-The script generates the following in the `out_dir`:
-- `train.bin`: Training data (uint16).
-- `val.bin`: Validation data (uint16).
-- `meta.pkl`: Pickled dictionary containing `stoi` (string-to-int) and `itos` (int-to-string).
+### 0. Prerequisites
 
-### 2. Training
-Run training using the standard nanoGPT script. Ensure `config.py` points to your `out_dir`.
+Ensure the dataset exists. If not, generate and prepare it first:
 
 ```bash
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config/your_experiment.py
+cd ../validation
+python gen_addition.py
+python prepare.py --file data/addition_2digit/addition_2digit.jsonl --shuffle --test_size=0.1
 ```
 
-### 3. Sampling
-Test the model with a prompt. You can override `start` and `stop_token` from the command line.
-
-> **Important:** The default `stop_token` is empty. If you want the model to stop generating at a specific token (e.g., your custom EOS `;`), enable it by passing `--stop_token=";"`.
->
-> **Note on `start`:** The default `start` prompt is `"\n"`. If you are using a custom `stop_token` to delimit samples, you typically want generation to start *after* that delimiter. So, you should also override `start` to match your delimiter (e.g., `--start=";"`) or provide a specific prompt (`--start="1+1"`).
+For the 8:2 split experiment (Experiment 3), use:
 
 ```bash
-# Basic usage (no early stopping, generates until max tokens)
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py
-
-# Enable early stopping with custom token.
-# Also updating 'start' to match the custom delimiter ';'.
-NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/your_experiment.py --start=";" --stop_token=";"
+python prepare.py --file data/addition_2digit/addition_2digit.jsonl --shuffle --test_size=0.2
 ```
 
-> **Tip (Shell Escaping):** Passing special characters like newline (`\n`) via command line requires specific escaping depending on your shell.
-> *   **Git Bash (Windows):** Use `--stop_token=$'\n'`
-> *   **PowerShell:** Use `` --stop_token="`n" `` (backtick n)
+### 1. Teacher Forcing (TF) Evaluation — No Mask
 
-## Quick Start (Example: 2-Digit Addition)
+```bash
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train_benchmark.py config/addition_2digit.py --enable_tf_eval=True --benchmark_target="both" --tf_eval_max_samples=1000
+```
 
-Follow these steps to run the included addition example. 
+### 2. Teacher Forcing (TF) Evaluation — With Target Mask
 
-0.  **Enter Framework Directory:**
-    ```bash
-    cd framework
-    ```
+```bash
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train_benchmark.py config/addition_2digit.py --enable_tf_eval=True --benchmark_target="both" --tf_eval_max_samples=1000 --target_mask=True
+```
 
-1.  **Generate Data:**
-    ```bash
-    python gen_addition.py
-    ```
+### 3. Autoregressive (AR) Generation Evaluation
 
-2.  **Prepare Data:**
-    ```bash
-    python prepare.py --file data/addition_2digit/addition_2digit.jsonl
-    ```
+Run after training is complete. Evaluates true AR accuracy by prompting the model with only the input portion and comparing the generated output token-by-token.
 
-3.  **Train:**
-    ```bash
-    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/train.py config/addition_2digit.py
-    ```
+```bash
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_generation.py config/addition_2digit.py --benchmark_target="both" --eval_max_samples=1000
+```
 
-4. **Sample:**
-    ```bash
-    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_2digit.py
-    ```
+---
 
-5. **Sample with Early Stopping:**
-    ```bash
-    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/sample.py config/addition_2digit.py --start="12+34" --stop_token=$'\n'
-    ```
+## Key Flags
+
+| Flag | Description |
+|---|---|
+| `--enable_tf_eval=True` | Enables Teacher Forcing exact-match evaluation every `eval_interval` iterations |
+| `--target_mask=True` | Applies target masking — loss computed on output tokens only |
+| `--benchmark_target` | `"train"`, `"val"`, or `"both"` — which split(s) to evaluate |
+| `--tf_eval_max_samples` | Max samples used for TF evaluation (default: all) |
+| `--eval_max_samples` | Max samples used for AR evaluation (default: all) |
+
+---
+
+## Configuration
+
+Experiment hyperparameters (model size, `block_size`, `learning_rate`, etc.) are defined in [`config/addition_2digit.py`](config/addition_2digit.py).
