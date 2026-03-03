@@ -5,7 +5,7 @@
 * **Model Configuration:** `n_layer=6, n_head=4, n_embd=128` (identical across all phases for fair comparison)
 * **Training Data:** 1~2-digit addition, exhaustive pairs (10,100 samples: 100 1-digit + 10,000 2-digit)
 * **Train / Val Split:** 90:10 shuffle split (~9,090 train / ~1,010 val)
-* **OOD Test Data:** 3,000 random 3-digit samples (`100`–`999`) and 3,000 random 4-digit samples (`1000`–`9999`)
+* **Out-of-distribution(OOD) Test Data:** 3,000 random 3-digit samples (`100`–`999`) and 3,000 random 4-digit samples (`1000`–`9999`)
 * **Training Setting:** `target_mask=True`, `enable_tf_eval=True`
 * **Evaluation Metric (AR):** Autoregressive generation — model is prompted with `input=` only; the final contiguous digit sequence in the generated output is compared to the true answer.
 * **Objective:** Show that a plain model that memorizes 1~2-digit arithmetic completely fails to generalize to longer inputs (Phase 1), and that training with a scratchpad-based carry algorithm enables the model to zero-shot generalize to unseen lengths (Phase 3).
