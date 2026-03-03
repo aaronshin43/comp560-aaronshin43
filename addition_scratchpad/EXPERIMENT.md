@@ -20,11 +20,8 @@
 
 **Plain format:** `{"input": "15+27", "output": "42"}`
 
-<!-- Insert wandb Train/Val Loss graph for Phase 1 below -->
-*(Train / Val Loss — Phase 1 Plain)*
-
-<!-- Insert wandb TF Exact Match graph for Phase 1 below -->
-*(TF Exact Match — Phase 1 Plain)*
+<img width="500" height="333" alt="Train / Val Loss — Phase 1 Plain" src="https://github.com/user-attachments/assets/e23f6c53-0717-46e9-a26f-1e236913c663" />
+<img width="500" height="333" alt="TF Exact Match — Phase 1 Plain" src="https://github.com/user-attachments/assets/e5267869-ab09-4654-9f83-5d2652850bd5" />
 
 ### Results
 
@@ -52,11 +49,9 @@
 
 Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-to-left). The structure is identical regardless of operand length.
 
-<!-- Insert wandb Train/Val Loss graph for Phase 2 below -->
-*(Train / Val Loss — Phase 2 Scratchpad)*
+<img width="500" height="333" alt="Train / Val Loss — Phase 2 Scratchpad" src="https://github.com/user-attachments/assets/92a58311-7b9c-4fab-8982-0196be758060" />
 
-<!-- Insert wandb TF Exact Match graph for Phase 2 below -->
-*(TF Exact Match — Phase 2 Scratchpad)*
+<img width="500" height="333" alt="TF Exact Match — Phase 2 Scratchpad" src="https://github.com/user-attachments/assets/bf7eaf51-b22f-42d3-8cdb-de633602f6f4" />
 
 ### Results
 
@@ -66,8 +61,7 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 
 **Qualitative verification:** To confirm the model is genuinely generating scratchpad chains rather than outputting memorized strings, individual samples were prompted and the outputs inspected manually. The model correctly produces bracket-by-bracket carry chains before emitting the final answer.
 
-<!-- Insert scratchpad output sample screenshot below -->
-*(Sample output — Phase 2 Scratchpad generation)*
+<img width="430" height="90" alt="Sample output — Phase 2 Scratchpad generation" src="https://github.com/user-attachments/assets/55c25870-02f0-40af-a29e-28c9191e6690" />
 
 ### Analysis
 
@@ -79,7 +73,7 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 
 ## 4. Phase 3: Zero-Shot Length Generalization
 
-**Hypothesis:** The Phase 2 scratchpad model, with no additional training, can generalize to 3~4-digit inputs by applying the same bracket-based carry algorithm it learned on 1~2-digit data.
+**Hypothesis:** The Phase 2 scratchpad model, with no additional training, can generalize to 3\~4-digit inputs by applying the same bracket-based carry algorithm it learned on 1\~2-digit data.
 
 **Checkpoint:** `out/phase2_scratchpad/ckpt.pt` — no additional training performed.
 
@@ -90,10 +84,10 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 | Test (3-digit OOD) | 0.6% (17/3,000) | 0.0% (0/3,000) |
 | Test (4-digit OOD) | 0.0% (0/3,000) | 0.0% (0/3,000) |
 
-**Qualitative verification:** Individual 3~4-digit samples were prompted and outputs inspected. The model consistently generates exactly **two brackets** regardless of input length — the same fixed depth seen in all 1~2-digit training samples — before emitting an incorrect answer.
+**Qualitative verification:** Individual 3\~4-digit samples were prompted and outputs inspected. The model consistently generates exactly **two brackets** regardless of input length — the same fixed depth seen in all 1\~2-digit training samples — before emitting an incorrect answer.
 
-<!-- Insert OOD sample output screenshot below -->
-*(Sample output — Phase 3 OOD generation showing fixed 2-bracket pattern)*
+<img width="430" height="90" alt="Sample output — Phase 3 OOD generation showing fixed 2-bracket pattern" src="https://github.com/user-attachments/assets/fed767c7-f7ec-472b-92f6-3b67554f924b" />
+<img width="430" height="90" alt="Sample output2 — Phase 3 OOD generation showing fixed 2-bracket pattern" src="https://github.com/user-attachments/assets/89640a45-d338-4b8d-b21f-16f4217a7b25" />
 
 ### Analysis
 
