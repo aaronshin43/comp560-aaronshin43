@@ -167,13 +167,13 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 | Test (3-digit, random) | 98.2% (2,963 / 3,000) | 58.8% (1,765 / 3,000) | 33.6% (1,008 / 3,000) |
 | Test (4-digit, random) | 95.8% (2,874 / 3,000) | 42.8% (1,283 / 3,000) | 29.6% (888 / 3,000) |
 
-<img width="700" height="333" alt="Phase 4b comparison bar chart — 3-digit and 4-digit accuracy across all Phase 4 variants" src="placeholder" />
+<img width="500" height="333" alt="Phase 4b comparison bar chart — 3-digit and 4-digit accuracy across all Phase 4 variants" src="https://github.com/user-attachments/assets/6f63afa7-6e6c-496a-8d6c-f35b13f1f05e" />
 
 #### Analysis
 
 * Both 500+500 and 2k+2k significantly outperform Phase 3 (0%), confirming that even minimal curriculum exposure is enough to break the fixed-depth failure mode.
 * Counterintuitively, **Min (n=500) outperforms Mid (n=2k)** on all eval targets (58.8% vs. 33.6% on 3-digit; 42.8% vs. 29.6% on 4-digit). This result was replicated with freshly generated datasets for both variants, ruling out sampling noise.
-* A likely explanation is the **training data ratio**. For Min (n=500), the 1~2-digit exhaustive samples (10,100) outnumber the 3~4-digit samples (1,000) by roughly 10:1, keeping the short-digit behavior well-anchored while providing just enough depth-variation signal. For Mid (n=2k), the ratio drops to ~2.5:1 — the higher-digit samples begin to interfere with the well-learned short-digit computation without yet providing enough coverage for reliable generalization.
+* A likely explanation is the **training data ratio**. For Min (n=500), the 1\~2-digit exhaustive samples (10,100) outnumber the 3\~4-digit samples (1,000) by roughly 10:1, keeping the short-digit behavior well-anchored while providing just enough depth-variation signal. For Mid (n=2k), the ratio drops to ~2.5:1 — the higher-digit samples begin to interfere with the well-learned short-digit computation without yet providing enough coverage for reliable generalization.
 * Neither variant approaches Large (n=5k), confirming that the quantity of longer-digit curriculum data matters, but the relationship is non-monotonic: too little helps less than Large (n=5k), and a medium amount (Mid, n=2k) apparently disrupts rather than improves upon Min (n=500). This suggests a mixing ratio sweet spot exists somewhere between n=500 and n=5,000 per digit length.
 
 ---
@@ -182,13 +182,13 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 
 This experiment investigated whether scratchpad-based reasoning can enable a small Transformer to generalize arithmetic to unseen digit lengths, and what training conditions are necessary for that generalization to occur.
 
-**Scratchpad training teaches the algorithm, but not when to apply it.** Phase 2 confirmed that a model trained on scratchpad-format 1~2-digit addition genuinely learns the digit-by-digit carry procedure rather than memorizing input-output mappings. Yet Phase 3 showed that this is insufficient for length generalization: the model learned the carry *rule* but also memorized the bracket *depth* (always 2) from its training distribution. Zero-shot generalization to longer inputs failed completely.
+**Scratchpad training teaches the algorithm, but not when to apply it.** Phase 2 confirmed that a model trained on scratchpad-format 1~2-digit addition genuinely learns the digit-by-digit carry procedure rather than memorizing input-output mappings. Yet Phase 3 showed that this is insufficient for length generalization: the model learned the carry rule but also memorized the bracket depth (always 2) from its training distribution. Zero-shot generalization to longer inputs failed completely.
 
 **The fix is straightforward: show the model examples at the target depth.** Phase 4a demonstrated that including 3~4-digit scratchpad samples in training immediately yields near-perfect generalization within those lengths (98.2% on 3-digit, 95.8% on 4-digit). The failure was not a fundamental limitation of the architecture — it was a data coverage gap.
 
 **Length generalization remains bounded by training distribution.** The 5-digit stretch test scored 0.0% even after Phase 4a, though qualitative inspection shows the model now correctly attempts 5 brackets rather than defaulting to 2, 3, or 4. The bottleneck has shifted from structural depth to arithmetic accuracy at unseen digit positions. This is consistent with the known difficulty of systematic length generalization in standard Transformers with absolute positional embeddings.
 
-**The minimum data ablation reveals a non-monotonic mixing relationship.** Surprisingly, 500 examples per digit length outperformed 2,000 on all eval targets, replicated across fresh data. When the 3~4-digit minority is too large relative to the 1~2-digit majority, it appears to disrupt the well-learned short-digit computation without proportionally improving longer-digit coverage. The optimal mixing ratio likely lies between 500 and 5,000 per digit length and warrants further investigation.
+**The minimum data ablation reveals a non-monotonic mixing relationship.** Surprisingly, 500 examples per digit length outperformed 2,000 on all eval targets, replicated across fresh data. When the 3\~4-digit minority is too large relative to the 1\~2-digit majority, it appears to disrupt the well-learned short-digit computation without proportionally improving longer-digit coverage. The optimal mixing ratio likely lies between 500 and 5,000 per digit length and warrants further investigation.
 
 | Phase | Key Finding |
 |---|---|
