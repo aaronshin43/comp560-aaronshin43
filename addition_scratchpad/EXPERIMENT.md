@@ -106,9 +106,9 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 
 ---
 
-## 5. Phase 4: Curriculum Learning
+## 5. Phase 4: Curriculum Learning (n = samples per digit length)
 
-### 5-1. Phase 4a: Full Curriculum
+### 5-1. Phase 4a: Large (n=5k per digit)
 
 **Hypothesis:** If the training set includes scratchpad examples across all target digit lengths (1~4 digits), the model will learn that bracket count is determined by operand length and successfully generalize the carry algorithm to any depth.
 
@@ -123,15 +123,15 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 | Train | 4-digit scratchpad (random) | 5,000 |
 | **Total** | | **~20,100** |
 
-**OOD test:** held-out random samples from `data/plain_3_4digit/` (not in training).
+**Test:** random samples from `data/plain_3_4digit/`.
 
 #### Results
 
 | Eval Target | Type | Accuracy | Correct / Total |
 |---|---|---|---|
 | Val (1~4-digit) | AR (in-dist) | 91.5% | 1,840 / 2,010 |
-| Test (3-digit, held-out) | AR | 98.2% | 2,947 / 3,000 |
-| Test (4-digit, held-out) | AR | 95.8% | 2,874 / 3,000 |
+| Test (3-digit, random) | AR | 98.2% | 2,947 / 3,000 |
+| Test (4-digit, random) | AR | 95.8% | 2,874 / 3,000 |
 | Stretch (5-digit) | AR (OOD) | 0.0% | 0 / 3,000 |
 
 <img width="500" height="333" alt="Train / Val Loss — Phase 4a Curriculum" src="https://github.com/user-attachments/assets/daa29275-accf-494b-ba42-1772bfb5d7fb" />
@@ -148,33 +148,33 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 
 ---
 
-### 5-2. Phase 4b: Minimum Data Ablation
+### 5-2. Phase 4b: Minimum Data Ablation 
 
 **Hypothesis:** Even a small number of 3~4-digit examples (e.g., 500 each) is sufficient for the model to learn that bracket count scales with operand length — the scratchpad *structure* is simple enough that very few demonstrations suffice.
 
-**Configs:** `config/phase4_min.py` (500+500), `config/phase4_mid.py` (2k+2k) — both use `block_size=128`, `max_iters=10000`
+**Configs:** `config/phase4_min.py` (Min, n=500), `config/phase4_mid.py` (Mid, n=2k) — both use `block_size=128`, `max_iters=10000`
 
 | Variant | 1~2-digit (exhaustive) | 3-digit (random) | 4-digit (random) | Total |
 |---|---|---|---|---|
-| 500+500 | 10,100 | 500 | 500 | ~11,100 |
-| 2k+2k | 10,100 | 2,000 | 2,000 | ~14,100 |
+| Min (n=500) | 10,100 | 500 | 500 | ~11,100 |
+| Mid (n=2k) | 10,100 | 2,000 | 2,000 | ~14,100 |
 
 #### Results
 
-| Eval Target | Phase 4a (5k+5k) | Phase 4b (500+500) | Phase 4b (2k+2k) |
+| Eval Target | Large (n=5k) | Min (n=500) | Mid (n=2k) |
 |---|---|---|---|
 | Val (1~4-digit) | 91.5% (1,840 / 2,010) | 83.2% (923 / 1,110) | 67.3% (949 / 1,410) |
-| Test (3-digit, held-out) | 98.2% (2,963 / 3,000) | 58.8% (1,765 / 3,000) | 33.6% (1,008 / 3,000) |
-| Test (4-digit, held-out) | 95.8% (2,874 / 3,000) | 42.8% (1,283 / 3,000) | 29.6% (888 / 3,000) |
+| Test (3-digit, random) | 98.2% (2,963 / 3,000) | 58.8% (1,765 / 3,000) | 33.6% (1,008 / 3,000) |
+| Test (4-digit, random) | 95.8% (2,874 / 3,000) | 42.8% (1,283 / 3,000) | 29.6% (888 / 3,000) |
 
 <img width="700" height="333" alt="Phase 4b comparison bar chart — 3-digit and 4-digit accuracy across all Phase 4 variants" src="placeholder" />
 
 #### Analysis
 
 * Both 500+500 and 2k+2k significantly outperform Phase 3 (0%), confirming that even minimal curriculum exposure is enough to break the fixed-depth failure mode.
-* Counterintuitively, **500+500 outperforms 2k+2k** on all eval targets (58.8% vs. 33.6% on 3-digit; 42.8% vs. 29.6% on 4-digit). This result was replicated with freshly generated datasets for both variants, ruling out sampling noise.
-* A likely explanation is the **training data ratio**. At 500+500, the 1~2-digit exhaustive samples (10,100) outnumber the 3~4-digit samples (1,000) by roughly 10:1, keeping the short-digit behavior well-anchored while providing just enough depth-variation signal. At 2k+2k, the ratio drops to ~2.5:1 — the higher-digit samples begin to interfere with the well-learned short-digit computation without yet providing enough coverage for reliable generalization.
-* Neither variant approaches Phase 4a (5k+5k), confirming that the quantity of longer-digit curriculum data matters, but the relationship is non-monotonic: too little helps less than 5k+5k, and too much (2k+2k) apparently disrupts rather than improves upon 500+500. This suggests a mixing ratio sweet spot exists somewhere between 500 and 5,000 per digit length.
+* Counterintuitively, **Min (n=500) outperforms Mid (n=2k)** on all eval targets (58.8% vs. 33.6% on 3-digit; 42.8% vs. 29.6% on 4-digit). This result was replicated with freshly generated datasets for both variants, ruling out sampling noise.
+* A likely explanation is the **training data ratio**. For Min (n=500), the 1~2-digit exhaustive samples (10,100) outnumber the 3~4-digit samples (1,000) by roughly 10:1, keeping the short-digit behavior well-anchored while providing just enough depth-variation signal. For Mid (n=2k), the ratio drops to ~2.5:1 — the higher-digit samples begin to interfere with the well-learned short-digit computation without yet providing enough coverage for reliable generalization.
+* Neither variant approaches Large (n=5k), confirming that the quantity of longer-digit curriculum data matters, but the relationship is non-monotonic: too little helps less than Large (n=5k), and a medium amount (Mid, n=2k) apparently disrupts rather than improves upon Min (n=500). This suggests a mixing ratio sweet spot exists somewhere between n=500 and n=5,000 per digit length.
 
 ---
 
