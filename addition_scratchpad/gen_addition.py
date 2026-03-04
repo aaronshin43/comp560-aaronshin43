@@ -173,6 +173,54 @@ def generate_ood_plain(out_dir: str, digit_count: int, num_samples: int = 3000) 
     print(f"Saved {len(data)} OOD samples to {fname}")
 
 
+def generate_combined_scratchpad(out_dir: str, n3: int = 5000, n4: int = 5000) -> None:
+    """
+    Generate combined curriculum scratchpad dataset for Phase 4.
+
+    Contents:
+      - Exhaustive 1-digit (100) + exhaustive 2-digit (10,000) = 10,100 samples
+      - n3 random 3-digit samples  (100-999 x 100-999)
+      - n4 random 4-digit samples  (1000-9999 x 1000-9999)
+    Total: 10,100 + n3 + n4 samples.
+
+    Output filename matches the directory name (aligns with prepare.py convention).
+    """
+    os.makedirs(out_dir, exist_ok=True)
+    data = []
+
+    # 1-digit exhaustive
+    print("Generating 1-digit scratchpad pairs (0..9 x 0..9)...")
+    for a in range(10):
+        for b in range(10):
+            data.append({"input": f"{a}+{b}", "output": build_scratchpad(a, b)})
+
+    # 2-digit exhaustive
+    print("Generating 2-digit scratchpad pairs (0..99 x 0..99)...")
+    for a in range(100):
+        for b in range(100):
+            data.append({"input": f"{a}+{b}", "output": build_scratchpad(a, b)})
+
+    # Random 3-digit
+    print(f"Generating {n3} random 3-digit scratchpad samples (100..999)...")
+    for _ in range(n3):
+        a, b = random.randint(100, 999), random.randint(100, 999)
+        data.append({"input": f"{a}+{b}", "output": build_scratchpad(a, b)})
+
+    # Random 4-digit
+    print(f"Generating {n4} random 4-digit scratchpad samples (1000..9999)...")
+    for _ in range(n4):
+        a, b = random.randint(1000, 9999), random.randint(1000, 9999)
+        data.append({"input": f"{a}+{b}", "output": build_scratchpad(a, b)})
+
+    dir_name = os.path.basename(os.path.normpath(out_dir))
+    fname = os.path.join(out_dir, f"{dir_name}.jsonl")
+    with open(fname, 'w', encoding='utf-8') as f:
+        for entry in data:
+            f.write(json.dumps(entry) + "\n")
+
+    print(f"Saved {len(data)} combined scratchpad samples to {fname}")
+
+
 if __name__ == "__main__":
     # ── Phase 1 & 2 training data ─────────────────────────────────────────────
     generate_plain('data/plain_1_2digit')
@@ -181,5 +229,13 @@ if __name__ == "__main__":
     # ── Phase 1 & 3 OOD test data ─────────────────────────────────────────────
     generate_ood_plain('data/plain_3_4digit', digit_count=3, num_samples=3000)
     generate_ood_plain('data/plain_3_4digit', digit_count=4, num_samples=3000)
+
+    # ── Phase 4 curriculum training data ─────────────────────────────────────
+    generate_combined_scratchpad('data/scratchpad_1_4digit',     n3=5000, n4=5000)  # Phase 4a: full
+    generate_combined_scratchpad('data/scratchpad_1_4digit_min', n3=500,  n4=500)   # Phase 4b: minimal
+    generate_combined_scratchpad('data/scratchpad_1_4digit_mid', n3=2000,  n4=2000) # Phase 4b: midium
+
+    # ── Phase 4 stretch OOD test data ─────────────────────────────────────────
+    generate_ood_plain('data/plain_5digit', digit_count=5, num_samples=3000)
 
     print("\nAll datasets generated.")
