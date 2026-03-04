@@ -134,8 +134,8 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 | Test (4-digit, held-out) | AR | 95.8% | 2,874 / 3,000 |
 | Stretch (5-digit) | AR (OOD) | 0.0% | 0 / 3,000 |
 
-<img width="500" height="333" alt="Train / Val Loss — Phase 4a Curriculum" src="placeholder" />
-<img width="500" height="333" alt="TF Exact Match — Phase 4a Curriculum" src="placeholder" />
+<img width="500" height="333" alt="Train / Val Loss — Phase 4a Curriculum" src="https://github.com/user-attachments/assets/daa29275-accf-494b-ba42-1772bfb5d7fb" />
+<img width="500" height="333" alt="TF Exact Match — Phase 4a Curriculum" src="https://github.com/user-attachments/assets/eb810fd9-0ca6-4066-8b17-9314327803dd" />
 
 #### Analysis
 
@@ -143,7 +143,8 @@ Each bracket `[dA+dB(+carry)=sum,Cnew_carry]` encodes one digit position (right-
 * The 5-digit stretch test scores **0.0%** overall. However, individual sampling shows the model sometimes attempts to generate 5 brackets — the structurally correct depth for 5-digit inputs — and in some cases successfully produces the full bracket chain. The failure is in the arithmetic itself, not the depth decision.
 * This is a qualitatively different failure from Phase 3. The Phase 3 model never attempted more than 2 brackets regardless of input. The Phase 4a model has learned that bracket count scales with operand length, but has not internalized the carry arithmetic for digit positions it has never computed before.
 
-<img width="430" height="90" alt="Sample output — Phase 4a 5-digit stretch showing correct bracket depth but wrong arithmetic" src="placeholder" />
+<img width="430" height="90" alt="Sample output — Phase 4a 5-digit stretch showing correct bracket depth but wrong arithmetic" src="https://github.com/user-attachments/assets/a11bfa4b-c8d7-45b3-86b8-64ddd44c1286" />
+<img width="430" height="90" alt="Sample output — Phase 4a 5-digit stretch showing correct bracket depth but wrong arithmetic2" src="https://github.com/user-attachments/assets/abfc8969-76fa-455d-8c35-cdde947b6cd9" />
 
 ---
 
