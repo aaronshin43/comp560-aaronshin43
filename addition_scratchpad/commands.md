@@ -59,6 +59,10 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGP
 # evlauate
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_scratchpad.py config/phase4_curriculum.py --eval_file=data/scratchpad_1_4digit/val.jsonl
 
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_scratchpad.py config/phase4_curriculum.py --eval_file=data/plain_3_4digit/3digit.jsonl
+
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_scratchpad.py config/phase4_curriculum.py --eval_file=data/plain_3_4digit/4digit.jsonl
+
 NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py python ../../comp560-nanoGPT/eval_scratchpad.py config/phase4_curriculum.py --eval_file=data/plain_5digit/5digit.jsonl
 
 # sample
