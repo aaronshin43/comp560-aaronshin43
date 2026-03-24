@@ -73,3 +73,10 @@ Each experiment built on the tooling of the previous one:
 | [docs/experiments/framework.md](docs/experiments/framework.md) | Exp 3 detail |
 | [docs/experiments/validation.md](docs/experiments/validation.md) | Exp 4 detail |
 | [docs/experiments/addition_scratchpad.md](docs/experiments/addition_scratchpad.md) | Exp 5 detail |
+| [docs/activitylog.md](docs/activitylog.md) | Chronological log of all research sessions, posted to the team's Microsoft Teams channel |
+
+## Activity Log
+
+`docs/activitylog.md` is a running log of every research session — what was worked on, how long it took, and what was found. Entries are also posted to the research team's Microsoft Teams channel.
+
+To add a new entry, use the `/activity-log` skill. It will ask for the date and activities, format the entry as proper markdown, and append it to the file.
