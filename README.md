@@ -44,3 +44,9 @@ A specific application focusing on teaching a transformer model to perform arith
 
 ### 3. [Short Input/Output Framework](framework/README.md)
 A standardized framework designed for experiments mapping short inputs to short outputs. It simplifies data preparation, training, and sampling for tasks like arithmetic, logic gates, and simple Q&A.
+
+### 4. [Validation: Target Masking Study](validation/README.md)
+Experiments validating the impact of target masking and context window size on autoregressive generation accuracy. Shows that restricting loss to output tokens only is critical for instruction-following tasks.
+
+### 5. [Addition Scratchpad: Length Generalization](addition_scratchpad/EXPERIMENT.md)
+Investigates whether scratchpad-based chain-of-thought reasoning enables a tiny Transformer to generalize addition to digit lengths unseen during training. Covers baseline failure, scratchpad training, zero-shot OOD testing, and curriculum learning.
