@@ -74,7 +74,7 @@ Both conditions use identical hyperparameters and the same prepared data files. 
 
 2. `eval_generation.py` — add an optional `--ckpt_path` argument (~5 lines) so the script can load `ckpt_01000.pt`, `ckpt_02000.pt`, etc. instead of always defaulting to `ckpt.pt`.
 
-After training, run `eval_generation.py` against each saved snapshot in iteration order to produce the accuracy-vs-iterations curve. Storage cost: ~4 MB per checkpoint × 10 snapshots × 6 runs ≈ 240 MB total.
+After training, run `eval_generation.py` against each saved snapshot in iteration order to produce the accuracy-vs-iterations curve. 
 
 ### Stretch Condition (optional)
 
