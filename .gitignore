@@ -12,3 +12,4 @@ env/
 venv/
 wandb/
 docs/activitylog.md
+.claude
