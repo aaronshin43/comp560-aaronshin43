@@ -82,9 +82,7 @@ To support post-hoc convergence curve collection, two small patches were made:
 | 9000 | **90.2%** | **90.4%** | **90.2%** | **90.3%** |
 | 10000 | 89.8% | 90.2% | 89.8% | **89.9%** |
 
-*Graph: AR accuracy vs. iterations — Cond A vs. Cond B (mean ± range across 3 seeds)*
-
-<!-- AR_accuracy_convergence_curve.png -->
+<img width="1000" height="625" alt="AR_accuracy_convergence_curve" src="https://github.com/user-attachments/assets/c156e6e1-1a45-4917-8817-6745af58871c" />
 
 ### 3.2 Iterations to Reach Accuracy Thresholds
 
@@ -119,9 +117,11 @@ Val loss is logged every 500 iterations. Condition B decreases monotonically thr
 | 10000 | 2.90 | 2.14 | 3.04 | 0.12 | 0.12 | 0.12 |
 
 Cond A minimum val loss: ~1.07 at iter 3,000. Final val loss: 2.14–3.04.
+
 Cond B minimum val loss: ~0.12 at iter 10,000 (still decreasing). Final val loss: ~0.12.
 
-*Graph: Val loss vs. iterations — Cond A vs. Cond B (all 6 runs)*
+<img width="1000" height="625" alt="val_loss_curve" src="https://github.com/user-attachments/assets/38c27110-a277-48eb-9070-516f13eb6211" />
+
 
 <!-- val_loss_curve.png -->
 
@@ -139,6 +139,9 @@ Cond B minimum val loss: ~0.12 at iter 10,000 (still decreasing). Final val loss
 | **Cond B mean** | **194** | **~58%** |
 
 Target masking adds ~8% wall-clock overhead. GPU power utilization is indistinguishable between conditions.
+
+<img width="1000" height="625" alt="exp6_gpu_usage" src="https://github.com/user-attachments/assets/c0c57233-2b24-467c-9c33-8142ae5cc4f6" />
+
 
 ---
 
