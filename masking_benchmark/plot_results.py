@@ -15,8 +15,10 @@ import matplotlib.ticker as ticker
 import numpy as np
 
 # ── Style ─────────────────────────────────────────────────────────────────────
-COLOR_A = '#E05C5C'   # red  — Condition A (no mask)
-COLOR_B = '#4C8EDA'   # blue — Condition B (target mask)
+COLOR_A = '#E05C5C'   # red    — Condition A (plain, no mask)
+COLOR_B = '#4C8EDA'   # blue   — Condition B (plain, target mask)
+COLOR_C = '#E09A3C'   # orange — Condition C (scratchpad, no mask)
+COLOR_D = '#4CAD72'   # green  — Condition D (scratchpad, target mask)
 
 plt.rcParams.update({
     'font.family': 'sans-serif',
@@ -24,93 +26,113 @@ plt.rcParams.update({
     'axes.spines.right': False,
 })
 
-# ── 1. AR Accuracy Convergence Curve ─────────────────────────────────────────
-acc = pd.read_csv('results/accuracy.csv')
-acc['iter'] = acc['iter'].astype(int)
-acc['cond_label'] = acc['cond'].str.extract(r'(cond_[AB])')
 
-fig, ax = plt.subplots(figsize=(8, 5))
+def plot_accuracy(csv_path, conditions, out_path, title):
+    acc = pd.read_csv(csv_path)
+    acc['iter'] = acc['iter'].astype(int)
+    acc['cond_label'] = acc['cond'].str.extract(
+        r'(cond_[' + ''.join(c[0][-1] for c in conditions) + r'])'
+    )
 
-for cond_label, color, name in [
+    _, ax = plt.subplots(figsize=(8, 5))
+    for cond_label, color, name in conditions:
+        subset = acc[acc['cond_label'] == cond_label]
+        grouped = subset.groupby('iter')['accuracy']
+        mean = grouped.mean()
+        lo   = grouped.min()
+        hi   = grouped.max()
+        ax.plot(mean.index, mean.values, color=color, linewidth=2, label=name)
+        ax.fill_between(mean.index, lo.values, hi.values,
+                        color=color, alpha=0.15, linewidth=0)
+
+    for level, alpha in [(90, 0.6), (85, 0.4), (80, 0.4)]:
+        ax.axhline(level, color='gray', linestyle=':', linewidth=1, alpha=alpha)
+
+    ax.set_xlabel('Iteration', fontsize=12)
+    ax.set_ylabel('Val AR Accuracy (%)', fontsize=12)
+    ax.set_title(title, fontsize=13)
+    ax.set_xlim(0, 10000)
+    ax.set_ylim(0, 100)
+    ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
+    ax.legend(fontsize=11)
+    ax.grid(axis='y', linestyle='--', alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=150)
+    plt.close()
+    print(f"Saved {out_path}")
+
+
+def plot_loss(csv_path, conditions, out_path, title):
+    loss_raw = pd.read_csv(csv_path)
+    mean_cols = [c for c in loss_raw.columns if 'val/loss' in c
+                 and '__MIN' not in c and '__MAX' not in c]
+    loss_raw['iter'] = loss_raw['Step'].astype(int) * 500
+
+    rows = []
+    for col in mean_cols:
+        run = col.split(' - ')[0].strip()
+        cond = run[:6]
+        tmp = loss_raw[['iter', col]].copy()
+        tmp.columns = ['iter', 'loss']
+        tmp['run']  = run
+        tmp['cond'] = cond
+        rows.append(tmp.dropna())
+    loss = pd.concat(rows, ignore_index=True)
+
+    _, ax = plt.subplots(figsize=(8, 5))
+    for cond_label, color, name in conditions:
+        subset = loss[loss['cond'] == cond_label]
+        grouped = subset.groupby('iter')['loss']
+        mean = grouped.mean()
+        lo   = grouped.min()
+        hi   = grouped.max()
+        ax.plot(mean.index, mean.values, color=color, linewidth=2, label=name)
+        ax.fill_between(mean.index, lo.values, hi.values,
+                        color=color, alpha=0.15, linewidth=0)
+
+    ax.set_xlabel('Iteration', fontsize=12)
+    ax.set_ylabel('Validation Loss', fontsize=12)
+    ax.set_title(title, fontsize=13)
+    ax.set_xlim(0, 10000)
+    ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
+    ax.legend(fontsize=11)
+    ax.grid(axis='y', linestyle='--', alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_path, dpi=150)
+    plt.close()
+    print(f"Saved {out_path}")
+
+
+# ── 1. Plain addition: A vs B ─────────────────────────────────────────────────
+AB_CONDITIONS = [
     ('cond_A', COLOR_A, 'Condition A — No Mask'),
     ('cond_B', COLOR_B, 'Condition B — Target Mask'),
-]:
-    subset = acc[acc['cond_label'] == cond_label]
-    grouped = subset.groupby('iter')['accuracy']
-    mean = grouped.mean()
-    lo   = grouped.min()
-    hi   = grouped.max()
+]
 
-    ax.plot(mean.index, mean.values, color=color, linewidth=2, label=name)
-    ax.fill_between(mean.index, lo.values, hi.values,
-                    color=color, alpha=0.15, linewidth=0)
+plot_accuracy(
+    'results/accuracy_ab.csv', AB_CONDITIONS,
+    'results/AR_accuracy_convergence_curve_ab.png',
+    'AR Accuracy vs. Iterations — Plain Addition\n(mean ± seed range, 3 seeds per condition)',
+)
+plot_loss(
+    'results/val_loss_ab.csv', AB_CONDITIONS,
+    'results/val_loss_curve_ab.png',
+    'Validation Loss vs. Iterations — Plain Addition\n(mean ± seed range, 3 seeds per condition)',
+)
 
-ax.axhline(90, color='gray', linestyle=':', linewidth=1, alpha=0.6)
-ax.axhline(85, color='gray', linestyle=':', linewidth=1, alpha=0.4)
-ax.axhline(80, color='gray', linestyle=':', linewidth=1, alpha=0.4)
+# ── 2. Scratchpad: C vs D ─────────────────────────────────────────────────────
+CD_CONDITIONS = [
+    ('cond_C', COLOR_C, 'Condition C — Scratchpad, No Mask'),
+    ('cond_D', COLOR_D, 'Condition D — Scratchpad, Target Mask'),
+]
 
-ax.set_xlabel('Iteration', fontsize=12)
-ax.set_ylabel('Val AR Accuracy (%)', fontsize=12)
-ax.set_title('AR Accuracy vs. Iterations\n(mean ± seed range, 3 seeds per condition)', fontsize=13)
-ax.set_xlim(0, 10000)
-ax.set_ylim(0, 100)
-ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
-ax.legend(fontsize=11)
-ax.grid(axis='y', linestyle='--', alpha=0.3)
-
-plt.tight_layout()
-plt.savefig('results/AR_accuracy_convergence_curve.png', dpi=150)
-plt.close()
-print("Saved results/AR_accuracy_convergence_curve.png")
-
-# ── 2. Validation Loss Curve ──────────────────────────────────────────────────
-loss_raw = pd.read_csv('results/wandb_val_loss.csv')
-
-# Extract only the mean columns (exclude __MIN / __MAX)
-mean_cols = [c for c in loss_raw.columns if 'val/loss' in c
-             and '__MIN' not in c and '__MAX' not in c]
-
-# Map W&B step → iteration (eval_interval = 500)
-loss_raw['iter'] = loss_raw['Step'].astype(int) * 500
-
-# Build tidy dataframe: iter, run, loss
-rows = []
-for col in mean_cols:
-    run = col.split(' - ')[0].strip()   # e.g. "cond_A_s1"
-    cond = run[:6]                       # e.g. "cond_A"
-    tmp = loss_raw[['iter', col]].copy()
-    tmp.columns = ['iter', 'loss']
-    tmp['run']  = run
-    tmp['cond'] = cond
-    rows.append(tmp.dropna())
-
-loss = pd.concat(rows, ignore_index=True)
-
-fig, ax = plt.subplots(figsize=(8, 5))
-
-for cond_label, color, name in [
-    ('cond_A', COLOR_A, 'Condition A — No Mask'),
-    ('cond_B', COLOR_B, 'Condition B — Target Mask'),
-]:
-    subset = loss[loss['cond'] == cond_label]
-    grouped = subset.groupby('iter')['loss']
-    mean = grouped.mean()
-    lo   = grouped.min()
-    hi   = grouped.max()
-
-    ax.plot(mean.index, mean.values, color=color, linewidth=2, label=name)
-    ax.fill_between(mean.index, lo.values, hi.values,
-                    color=color, alpha=0.15, linewidth=0)
-
-ax.set_xlabel('Iteration', fontsize=12)
-ax.set_ylabel('Validation Loss', fontsize=12)
-ax.set_title('Validation Loss vs. Iterations\n(mean ± seed range, 3 seeds per condition)', fontsize=13)
-ax.set_xlim(0, 10000)
-ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
-ax.legend(fontsize=11)
-ax.grid(axis='y', linestyle='--', alpha=0.3)
-
-plt.tight_layout()
-plt.savefig('results/val_loss_curve.png', dpi=150)
-plt.close()
-print("Saved results/val_loss_curve.png")
+plot_accuracy(
+    'results/accuracy_scratchpad.csv', CD_CONDITIONS,
+    'results/AR_accuracy_convergence_curve_cd.png',
+    'AR Accuracy vs. Iterations — Scratchpad Addition\n(mean ± seed range, 3 seeds per condition)',
+)
+plot_loss(
+    'results/val_loss_cd.csv', CD_CONDITIONS,
+    'results/val_loss_curve_cd.png',
+    'Validation Loss vs. Iterations — Scratchpad Addition\n(mean ± seed range, 3 seeds per condition)',
+)
