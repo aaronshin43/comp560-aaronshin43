@@ -191,6 +191,128 @@ The val loss curves are the clearest signal: Cond B converges cleanly to 0.12; C
 
 ---
 
+## 7. Stretch Conditions — Scratchpad (C vs D)
+
+### 7.1 Setup
+
+Same model and hyperparameters as conditions A/B. Key differences:
+- `dataset = scratchpad_1_2digit` — output is bracket-based carry chain (e.g. `[5+7=12,C1][1+2+1=4,C0]42`) instead of plain answer
+- `block_size = 128` — required to accommodate scratchpad sequence length
+- Conditions C (no mask) and D (target mask), 3 seeds each (1337–1339)
+
+Scratchpad outputs are ~3–5× longer than plain outputs, so the input-to-output ratio is much lower. If the secondary hypothesis holds (masking benefit scales with output length), the C vs D gap should be larger than the A vs B gap.
+
+### 7.2 AR Generation Accuracy — Full Convergence Curves
+
+**Condition C (Scratchpad, No Mask):**
+
+| Iter | s1 | s2 | s3 | Mean |
+|---|---|---|---|---|
+| 500 | 0.0% | 0.0% | 0.0% | 0.0% |
+| 1000 | 1.5% | 7.9% | 1.2% | 3.5% |
+| 1500 | 42.8% | 58.4% | 30.3% | 43.8% |
+| 2000 | 57.1% | 84.0% | 54.1% | 65.1% |
+| 2500 | 70.7% | 86.7% | 68.8% | 75.4% |
+| 3000 | **86.2%** | 87.1% | 83.5% | 85.6% |
+| 3500 | 86.9% | 87.3% | **86.0%** | **86.7%** |
+| 4000 | 86.9% | 83.9% | 83.9% | 84.9% |
+| 4500 | 82.9% | 86.0% | 86.2% | 85.0% |
+| 5000 | 81.6% | 86.7% | 86.1% | 84.8% |
+| 5500 | **88.2%** | 87.8% | **88.5%** | **88.2%** |
+| 6000 | 87.4% | 87.3% | 85.1% | 86.6% |
+| 7000 | 87.0% | 87.0% | 86.6% | 86.9% |
+| 8000 | 87.7% | **87.9%** | 87.5% | 87.7% |
+| 9000 | 86.1% | 87.8% | 87.5% | 87.1% |
+| 10000 | 86.3% | 87.7% | 86.4% | **86.8%** |
+
+**Condition D (Scratchpad, Target Mask):**
+
+| Iter | s1 | s2 | s3 | Mean |
+|---|---|---|---|---|
+| 500 | 0.0% | 0.0% | 0.0% | 0.0% |
+| 1000 | 4.4% | 29.5% | 2.1% | 12.0% |
+| 1500 | 32.1% | 81.4% | 36.9% | 50.1% |
+| 2000 | 25.5% | 80.0% | 62.6% | 56.0% |
+| 2500 | 84.7% | 49.9% | 44.7% | 59.8% |
+| 3000 | 72.8% | 77.4% | **84.9%** | 78.4% |
+| 3500 | 86.5% | 87.3% | 86.2% | **86.7%** |
+| 4000 | 87.7% | 87.2% | 87.0% | **87.3%** |
+| 4500 | **87.7%** | 87.4% | **87.9%** | **87.7%** |
+| 5000 | 85.7% | **87.9%** | 87.8% | 87.1% |
+| 5500 | 87.1% | 87.2% | 87.5% | 87.3% |
+| 6000 | 85.1% | 87.7% | 85.2% | 86.0% |
+| 7000 | 87.4% | 87.5% | 87.2% | 87.4% |
+| 8000 | **88.3%** | 87.1% | 85.6% | 87.0% |
+| 9000 | 87.4% | 86.2% | 86.4% | 86.7% |
+| 10000 | 86.7% | 84.8% | 86.6% | **86.0%** |
+
+### 7.3 Iterations to Reach Accuracy Thresholds
+
+| Threshold | C — s1 | C — s2 | C — s3 | C — mean | D — s1 | D — s2 | D — s3 | D — mean |
+|---|---|---|---|---|---|---|---|---|
+| 80% | 3,000 | 2,000 | 3,000 | **2,667** | 2,500 | 1,500 | 3,000 | **2,333** |
+| 85% | 3,000 | 2,500 | 3,500 | **3,000** | 3,500 | 3,500 | 3,500 | **3,500** |
+| 90% | never | never | never | — | never | never | never | — |
+
+### 7.4 Validation Loss
+
+Both conditions show val loss divergence after iter ~3,500 — unlike condition B (plain, masked) which decreased monotonically. However, the divergence in C/D is far less severe than in condition A (plain, unmasked), which reached 2.1–3.0 by iter 10,000.
+
+| Iter | C — s1 | C — s2 | C — s3 | D — s1 | D — s2 | D — s3 |
+|---|---|---|---|---|---|---|
+| 0 | 2.95 | 2.94 | 2.96 | 2.95 | 2.94 | 2.96 |
+| 500 | 0.920 | 0.895 | 0.888 | 0.887 | 0.864 | 0.840 |
+| 1000 | 0.413 | 0.416 | 0.462 | 0.372 | 0.308 | 0.375 |
+| 2000 | 0.355 | 0.344 | 0.359 | 0.302 | 0.275 | 0.290 |
+| 3000 | **0.343** | **0.343** | **0.344** | 0.314 | 0.275 | 0.274 |
+| 3500 | 0.343 | 0.344 | 0.343 | 0.274 | **0.274** | **0.275** |
+| 5000 | 0.364 | 0.356 | 0.346 | 0.278 | 0.284 | 0.288 |
+| 7000 | 0.372 | 0.469 | 0.387 | 0.328 | 0.359 | 0.365 |
+| 10000 | 0.442 | 0.648 | 0.499 | 0.430 | 0.510 | 0.534 |
+
+C minimum val loss: ~0.343 at iter 3,000–3,500. Final val loss: 0.44–0.65.
+D minimum val loss: ~0.274 at iter 3,500–4,000. Final val loss: 0.43–0.53.
+
+### 7.5 Masking Efficiency Gap: Plain vs Scratchpad
+
+| Comparison | Final Accuracy Gap (masked − unmasked) |
+|---|---|
+| A vs B (plain, 10k iters) | **+6.4pp** (83.5% → 89.9%) |
+| C vs D (scratchpad, 10k iters) | **−0.8pp** (86.8% → 86.0%) |
+
+The secondary hypothesis is **not confirmed**. C and D perform nearly identically, with the unmasked condition (C) marginally higher at 10,000 iterations.
+
+### 7.6 Training Overhead
+
+| Run | Runtime (s) | GPU Power (avg %) |
+|---|---|---|
+| cond_C_s1 | 230 | ~75% |
+| cond_C_s2 | 232 | ~74% |
+| cond_C_s3 | 229 | ~75% |
+| **Cond C mean** | **230** | **~75%** |
+| cond_D_s1 | 248 | ~84% |
+| cond_D_s2 | 251 | ~80% |
+| cond_D_s3 | 239 | ~85% |
+| **Cond D mean** | **246** | **~83%** |
+
+Target masking adds ~7% wall-clock overhead on scratchpad, consistent with the ~8% overhead observed on plain addition (conditions A/B).
+
+### 7.7 Analysis
+
+**The secondary hypothesis is not confirmed.** C and D converge to the same accuracy ceiling (~86–88%), and neither reaches 90%. The C vs D gap at 10,000 iterations is effectively zero (−0.8pp), compared to the 6.4pp gap between A and B.
+
+The explanation lies in the token ratio. For plain addition, the input (`12+34=`) accounts for ~70% of each sequence, making the unmasked gradient heavily polluted by input-prediction noise. For scratchpad, the input accounts for only ~22% of the sequence (the output bracket chain dominates). This means masking removes far less noise per sequence in the scratchpad setting — and accordingly, the accuracy benefit disappears.
+
+A second factor is block density. With `block_size=128` and scratchpad sequences averaging ~32 characters each, a block contains only ~4 equations. With `block_size=64` and plain sequences averaging ~8 characters, a block contains ~8 equations. Fewer equation boundaries per block reduces the opportunity for the unmasked model to memorize cross-equation transitions, weakening the overfitting pressure that produced A's val loss collapse.
+
+This is consistent with the val loss data: condition C diverges to 0.44–0.65 by iter 10,000, far less catastrophic than condition A's 2.1–3.0. The overfitting mechanism is still present in C, but its magnitude is greatly reduced by the longer sequence format.
+
+Interestingly, condition D (masked, scratchpad) also shows val loss divergence — something not observed in condition B (masked, plain). With complex multi-token bracket outputs, some degree of overfitting to the output structure appears unavoidable even with masking. This does not hurt AR accuracy because the accuracy measure only checks final answer correctness, not whether every bracket token matches exactly.
+
+**Summary:** The masking benefit scales with the fraction of the sequence that is input, not with the absolute length of the output.
+
+---
+
 ## 6. Comparison with Exp 4
 
 | Experiment | Condition | Iterations | Val AR Accuracy |
