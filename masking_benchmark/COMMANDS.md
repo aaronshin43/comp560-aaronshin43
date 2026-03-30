@@ -93,3 +93,77 @@ grep -E "^===|Exact-match" results/eval_log.txt \
 ```
 
 Output: `cond,iter,accuracy` — one row per snapshot.
+
+---
+
+## Step 6 — Stretch Conditions (Scratchpad)
+
+### Step 6a — Data Preparation
+
+```bash
+python gen_scratchpad.py
+
+python prepare.py --file data/scratchpad_1_2digit/scratchpad_1_2digit.jsonl \
+    --out_dir data/scratchpad_1_2digit --shuffle
+```
+
+### Step 6b — Training
+
+#### Condition C — Scratchpad, no mask
+
+```bash
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=False --seed=1337 --out_dir=out/cond_C_s1 --wandb_run_name=cond_C_s1
+
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=False --seed=1338 --out_dir=out/cond_C_s2 --wandb_run_name=cond_C_s2
+
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=False --seed=1339 --out_dir=out/cond_C_s3 --wandb_run_name=cond_C_s3
+```
+
+#### Condition D — Scratchpad, target mask
+
+```bash
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=True --seed=1337 --out_dir=out/cond_D_s1 --wandb_run_name=cond_D_s1
+
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=True --seed=1338 --out_dir=out/cond_D_s2 --wandb_run_name=cond_D_s2
+
+NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+  python ../../comp560-nanoGPT/train_benchmark.py config/scratchpad_1_2digit.py \
+  --target_mask=True --seed=1339 --out_dir=out/cond_D_s3 --wandb_run_name=cond_D_s3
+```
+
+### Step 6c — Post-hoc AR Eval
+
+```bash
+for cond in cond_C_s1 cond_C_s2 cond_C_s3 cond_D_s1 cond_D_s2 cond_D_s3; do
+  for iter in 00500 01000 01500 02000 02500 03000 03500 04000 04500 05000 \
+               05500 06000 06500 07000 07500 08000 08500 09000 09500 10000; do
+    echo "=== $cond @ iter $iter ==="
+    NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
+      python ../../comp560-nanoGPT/eval_generation.py \
+      --out_dir=out/$cond \
+      --dataset=scratchpad_1_2digit \
+      --ckpt_path=out/$cond/ckpt_${iter}.pt \
+      --benchmark_target=val
+  done
+done 2>&1 | tee results/eval_log_scratchpad.txt
+```
+
+Extract to CSV:
+
+```bash
+grep -E "^===|Exact-match" results/eval_log_scratchpad.txt \
+  | awk 'BEGIN { print "cond,iter,accuracy" }
+    /^===/ { split($0, a, " "); cond=a[2]; iter=a[5] }
+    /Exact-match/ { match($0, /[0-9]+\.[0-9]+/); print cond "," iter "," substr($0, RSTART, RLENGTH) }
+  ' > results/accuracy_scratchpad.csv
+```
