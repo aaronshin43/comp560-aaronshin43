@@ -246,6 +246,9 @@ Scratchpad outputs are ~3–5× longer than plain outputs, so the input-to-outpu
 | 9000 | 87.4% | 86.2% | 86.4% | 86.7% |
 | 10000 | 86.7% | 84.8% | 86.6% | **86.0%** |
 
+<!-- Upload results/AR_accuracy_convergence_curve_cd.png and replace src -->
+<img width="1000" height="625" alt="AR_accuracy_convergence_curve_cd" src="" />
+
 ### 7.3 Iterations to Reach Accuracy Thresholds
 
 | Threshold | C — s1 | C — s2 | C — s3 | C — mean | D — s1 | D — s2 | D — s3 | D — mean |
@@ -272,6 +275,9 @@ Both conditions show val loss divergence after iter ~3,500 — unlike condition 
 
 C minimum val loss: ~0.343 at iter 3,000–3,500. Final val loss: 0.44–0.65.
 D minimum val loss: ~0.274 at iter 3,500–4,000. Final val loss: 0.43–0.53.
+
+<!-- Upload results/val_loss_curve_cd.png and replace src -->
+<img width="1000" height="625" alt="val_loss_curve_cd" src="" />
 
 ### 7.5 Masking Efficiency Gap: Plain vs Scratchpad
 
