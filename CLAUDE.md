@@ -23,6 +23,7 @@ Each experiment lives in its own subdirectory inside `comp560-aaronshin43/`:
 | `framework/` | Exp 3 — Short I/O framework | Introduces JSONL-based `prepare.py`; no JSONL eval splits |
 | `validation/` | Exp 4 — Target masking study | Extended `prepare.py` saves `.jsonl` splits for TF/AR eval |
 | `addition_scratchpad/` | Exp 5 — Scratchpad length generalization | 4-phase curriculum; uses `train_benchmark.py` + `eval_scratchpad.py` |
+| `masking_benchmark/` | Exp 6 — Target masking benchmark | Convergence curve study (A/B plain + C/D scratchpad); post-hoc AR eval on named snapshots |
 
 ---
 
@@ -50,9 +51,9 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
 ## Experiment Order & Progression
 
 ```
-addition → morse-code → framework → validation → addition_scratchpad
-   ↑           ↑            ↑             ↑                ↑
- Exp 1       Exp 2        Exp 3         Exp 4            Exp 5
+addition → morse-code → framework → validation → addition_scratchpad → masking_benchmark
+   ↑           ↑            ↑             ↑                ↑                   ↑
+ Exp 1       Exp 2        Exp 3         Exp 4            Exp 5               Exp 6
 ```
 
 Each experiment built on the tooling of the previous one:
@@ -60,6 +61,7 @@ Each experiment built on the tooling of the previous one:
 - **Exp 3**: standardized JSONL → `.bin` pipeline (`framework/prepare.py`)
 - **Exp 4**: adds `.jsonl` splits, `train_benchmark.py`, target masking
 - **Exp 5**: adds scratchpad data format, `eval_scratchpad.py`, curriculum datasets
+- **Exp 6**: adds named checkpoint snapshots in `train_benchmark.py`, `--ckpt_path` in `eval_generation.py`; multi-seed convergence curve study
 
 ---
 
@@ -73,6 +75,7 @@ Each experiment built on the tooling of the previous one:
 | [docs/experiments/framework.md](docs/experiments/framework.md) | Exp 3 detail |
 | [docs/experiments/validation.md](docs/experiments/validation.md) | Exp 4 detail |
 | [docs/experiments/addition_scratchpad.md](docs/experiments/addition_scratchpad.md) | Exp 5 detail |
+| [docs/experiments/masking_benchmark.md](docs/experiments/masking_benchmark.md) | Exp 6 detail |
 | [docs/activitylog.md](docs/activitylog.md) | Chronological log of all research sessions, posted to the team's Microsoft Teams channel |
 
 ## Activity Log
