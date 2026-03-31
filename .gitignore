@@ -12,4 +12,5 @@ env/
 venv/
 wandb/
 docs/activitylog.md
+docs/ROADMAP.md
 .claude
