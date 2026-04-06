@@ -24,6 +24,7 @@ Each experiment lives in its own subdirectory inside `comp560-aaronshin43/`:
 | `validation/` | Exp 4 — Target masking study | Extended `prepare.py` saves `.jsonl` splits for TF/AR eval |
 | `addition_scratchpad/` | Exp 5 — Scratchpad length generalization | 4-phase curriculum; uses `train_benchmark.py` + `eval_scratchpad.py` |
 | `masking_benchmark/` | Exp 6 — Target masking benchmark | Convergence curve study (A/B plain + C/D scratchpad); post-hoc AR eval on named snapshots |
+| `masking_study/` | Exp 7 — Masking input fraction study | Two-phase validation of Exp 6 hypothesis: digit-length extension (Phase 1) + input fraction manipulation (Phase 2) |
 
 ---
 
@@ -51,9 +52,7 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
 ## Experiment Order & Progression
 
 ```
-addition → morse-code → framework → validation → addition_scratchpad → masking_benchmark
-   ↑           ↑            ↑             ↑                ↑                   ↑
- Exp 1       Exp 2        Exp 3         Exp 4            Exp 5               Exp 6
+addition → morse-code → framework → validation → addition_scratchpad → masking_benchmark → masking_study
 ```
 
 Each experiment built on the tooling of the previous one:
@@ -76,6 +75,7 @@ Each experiment built on the tooling of the previous one:
 | [docs/experiments/validation.md](docs/experiments/validation.md) | Exp 4 detail |
 | [docs/experiments/addition_scratchpad.md](docs/experiments/addition_scratchpad.md) | Exp 5 detail |
 | [docs/experiments/masking_benchmark.md](docs/experiments/masking_benchmark.md) | Exp 6 detail |
+| [docs/experiments/masking_study.md](docs/experiments/masking_study.md) | Exp 7 detail |
 | [docs/activitylog.md](docs/activitylog.md) | Chronological log of all research sessions, posted to the team's Microsoft Teams channel |
 
 ## Activity Log
