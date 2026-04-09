@@ -1,6 +1,6 @@
 # CLAUDE.md — comp560-aaronshin43
 
-Aaron Shin's COMP560 (Dickinson, Spring 2026) research project. Experiments teaching tiny Transformers (nanoGPT) to perform short-input / short-output tasks such as arithmetic and Morse code translation.
+Aaron Shin's COMP560 (Dickinson, Spring 2026) research project. Experiments using tiny Transformers (nanoGPT).
 
 ---
 
