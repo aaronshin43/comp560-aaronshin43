@@ -91,6 +91,89 @@ Secondary metric: first iter where accuracy exceeds 80% (convergence speed).
 
 ---
 
+## Phase 2: Input Fraction Manipulation
+
+### Design
+
+Use 2-digit scratchpad but repeat the input equation N times before the output. This directly varies input fraction while holding output structure fixed.
+
+| Condition | Input prefix | Example | Input fraction |
+|---|---|---|---|
+| 1x | Normal | `12+34=[...]46` | ~19% |
+| 2x | Repeated ×2 | `12+34=12+34=[...]46` | ~32% |
+| 3x | Repeated ×3 | `12+34=12+34=12+34=[...]46` | ~41% |
+| 4x | Repeated ×4 | `12+34=...×4=[...]46` | ~48% |
+| 5x | Repeated ×5 | `12+34=...×5=[...]46` | ~54% |
+
+For each multiplier: train masked vs unmasked → 10 conditions total.
+
+| Condition | Multiplier | Masking |
+|---|---|---|
+| M | 1x | No |
+| N | 1x | Yes |
+| O | 2x | No |
+| P | 2x | Yes |
+| Q | 3x | No |
+| R | 3x | Yes |
+| S | 4x | No |
+| T | 4x | Yes |
+| U | 5x | No |
+| V | 5x | Yes |
+
+### Dataset
+
+- 10,000 samples per multiplier variant
+- Same scratchpad output format as Exp 6
+- The model never sees a "clean" version during training — the repeated prefix is always there
+
+### Config
+
+- `block_size`: 64 (all variants fit within 56 chars at 5x)
+- `max_iters`: 10,000
+- Seeds: 3 per condition
+
+### Primary Metric
+
+Plot masking gap (masked − unmasked accuracy) vs input fraction.
+Expected: monotonically increasing curve.
+
+### Expected Outcome
+
+- At 1x (19%): masking gap ≈ 0pp (replicates Exp 6 C≈D)
+- As multiplier increases: masking gap grows
+- At 5x (54%): masking gap approaches plain-addition level
+- This directly shows input fraction is causal, not just correlated
+
+---
+
+## Implementation Plan (Phase 2)
+
+Phase 1 is complete. Remaining steps are for Phase 2 only.
+
+### Step 1: Generate datasets
+- Add repeated-prefix scratchpad generator to `gen_data.py` (multipliers 1–5)
+- Run `prepare.py` on each variant → 5 datasets under `data/phase2_*`
+
+### Step 2: Training
+- Write configs for each multiplier under `config/`
+- Add training commands to `COMMANDS.md`
+- Use `train_benchmark.py` with `always_save_checkpoint=True`
+
+### Step 3: Evaluation
+- Run `eval_generation.py` on checkpoints per condition
+- Collect results into `results/accuracy_phase2.csv`
+
+### Step 4: Analysis
+- Line plot of masking gap vs input fraction (M/N through U/V)
+- Use `analyze-results` agent
+
+### Step 5: Report
+- Condense Phase 1 section in `EXPERIMENT.md`, add Phase 2 results
+- Update `docs/experiments/masking_study.md`
+- Use `write-docs` agent
+
+---
+
 ## Reusable Assets
 
 - `masking_benchmark/gen_scratchpad.py` — `build_scratchpad()` function
