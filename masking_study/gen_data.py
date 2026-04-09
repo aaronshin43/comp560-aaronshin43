@@ -1,7 +1,7 @@
 """
 Generate Phase 1 datasets for Exp 7 (Masking Study).
 
-Produces 4 dataset variants, each with 10,000 randomly sampled addition pairs:
+Produces 4 dataset variants, each with 30,000 randomly sampled addition pairs:
   - plain_3digit:       100-999  + 100-999,  format: ABC+DEF=GHIJ
   - plain_4digit:       1000-9999 + 1000-9999, format: ABCD+EFGH=IJKLM
   - scratchpad_3digit:  100-999  + 100-999,  scratchpad bracket format
@@ -138,28 +138,28 @@ VARIANTS = [
         "name": "plain_3digit",
         "lo": 100,
         "hi": 999,
-        "n": 10_000,
+        "n": 30_000,
         "generator": "plain",
     },
     {
         "name": "plain_4digit",
         "lo": 1000,
         "hi": 9999,
-        "n": 10_000,
+        "n": 30_000,
         "generator": "plain",
     },
     {
         "name": "scratchpad_3digit",
         "lo": 100,
         "hi": 999,
-        "n": 10_000,
+        "n": 30_000,
         "generator": "scratchpad",
     },
     {
         "name": "scratchpad_4digit",
         "lo": 1000,
         "hi": 9999,
-        "n": 10_000,
+        "n": 30_000,
         "generator": "scratchpad",
     },
 ]
