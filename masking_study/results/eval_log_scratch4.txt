@@ -1,0 +1,2799 @@
+=== cond_K_s1 @ iter 01000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_K_s1 @ iter 02000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 63.6%  (636/1000 correct)
+
+=== cond_K_s1 @ iter 03000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 65.0%  (650/1000 correct)
+
+=== cond_K_s1 @ iter 04000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.1%  (951/1000 correct)
+
+=== cond_K_s1 @ iter 05000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 94.0%  (940/1000 correct)
+
+=== cond_K_s1 @ iter 06000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 69.0%  (690/1000 correct)
+
+=== cond_K_s1 @ iter 07000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_K_s1 @ iter 08000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s1 @ iter 09000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_K_s1 @ iter 10000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_K_s1 @ iter 11000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_K_s1 @ iter 12000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s1 @ iter 13000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_K_s1 @ iter 14000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_K_s1 @ iter 15000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_K_s1 @ iter 16000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_K_s1 @ iter 17000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_K_s1 @ iter 18000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s1 @ iter 19000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_K_s1 @ iter 20000 ===
+Overriding: out_dir = out/cond_K_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s1/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s1/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s2 @ iter 01000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_K_s2 @ iter 02000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 63.5%  (635/1000 correct)
+
+=== cond_K_s2 @ iter 03000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.0%  (960/1000 correct)
+
+=== cond_K_s2 @ iter 04000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.5%  (975/1000 correct)
+
+=== cond_K_s2 @ iter 05000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 74.3%  (743/1000 correct)
+
+=== cond_K_s2 @ iter 06000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.3%  (983/1000 correct)
+
+=== cond_K_s2 @ iter 07000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_K_s2 @ iter 08000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_K_s2 @ iter 09000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_K_s2 @ iter 10000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.2%  (982/1000 correct)
+
+=== cond_K_s2 @ iter 11000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_K_s2 @ iter 12000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s2 @ iter 13000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_K_s2 @ iter 14000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.7%  (987/1000 correct)
+
+=== cond_K_s2 @ iter 15000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s2 @ iter 16000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s2 @ iter 17000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s2 @ iter 18000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_K_s2 @ iter 19000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s2 @ iter 20000 ===
+Overriding: out_dir = out/cond_K_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s2/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s2/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s3 @ iter 01000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_K_s3 @ iter 02000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 53.9%  (539/1000 correct)
+
+=== cond_K_s3 @ iter 03000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.7%  (957/1000 correct)
+
+=== cond_K_s3 @ iter 04000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.3%  (953/1000 correct)
+
+=== cond_K_s3 @ iter 05000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.4%  (974/1000 correct)
+
+=== cond_K_s3 @ iter 06000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 84.2%  (842/1000 correct)
+
+=== cond_K_s3 @ iter 07000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_K_s3 @ iter 08000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.7%  (987/1000 correct)
+
+=== cond_K_s3 @ iter 09000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 76.8%  (768/1000 correct)
+
+=== cond_K_s3 @ iter 10000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_K_s3 @ iter 11000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_K_s3 @ iter 12000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s3 @ iter 13000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s3 @ iter 14000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.8%  (968/1000 correct)
+
+=== cond_K_s3 @ iter 15000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_K_s3 @ iter 16000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_K_s3 @ iter 17000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_K_s3 @ iter 18000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s3 @ iter 19000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s3 @ iter 20000 ===
+Overriding: out_dir = out/cond_K_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s3/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s3/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s4 @ iter 01000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_K_s4 @ iter 02000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 23.5%  (235/1000 correct)
+
+=== cond_K_s4 @ iter 03000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.3%  (953/1000 correct)
+
+=== cond_K_s4 @ iter 04000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 34.6%  (346/1000 correct)
+
+=== cond_K_s4 @ iter 05000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.8%  (978/1000 correct)
+
+=== cond_K_s4 @ iter 06000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_K_s4 @ iter 07000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.0%  (970/1000 correct)
+
+=== cond_K_s4 @ iter 08000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.1%  (951/1000 correct)
+
+=== cond_K_s4 @ iter 09000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.0%  (980/1000 correct)
+
+=== cond_K_s4 @ iter 10000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s4 @ iter 11000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 92.7%  (927/1000 correct)
+
+=== cond_K_s4 @ iter 12000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_K_s4 @ iter 13000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s4 @ iter 14000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s4 @ iter 15000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s4 @ iter 16000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_K_s4 @ iter 17000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_K_s4 @ iter 18000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s4 @ iter 19000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_K_s4 @ iter 20000 ===
+Overriding: out_dir = out/cond_K_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s4/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s4/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_K_s5 @ iter 01000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_K_s5 @ iter 02000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 11.4%  (114/1000 correct)
+
+=== cond_K_s5 @ iter 03000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 89.8%  (898/1000 correct)
+
+=== cond_K_s5 @ iter 04000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.8%  (968/1000 correct)
+
+=== cond_K_s5 @ iter 05000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.9%  (979/1000 correct)
+
+=== cond_K_s5 @ iter 06000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.4%  (964/1000 correct)
+
+=== cond_K_s5 @ iter 07000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.9%  (979/1000 correct)
+
+=== cond_K_s5 @ iter 08000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s5 @ iter 09000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_K_s5 @ iter 10000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s5 @ iter 11000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 89.7%  (897/1000 correct)
+
+=== cond_K_s5 @ iter 12000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s5 @ iter 13000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s5 @ iter 14000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.2%  (982/1000 correct)
+
+=== cond_K_s5 @ iter 15000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_K_s5 @ iter 16000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_K_s5 @ iter 17000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_K_s5 @ iter 18000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_K_s5 @ iter 19000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_K_s5 @ iter 20000 ===
+Overriding: out_dir = out/cond_K_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_K_s5/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_K_s5/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_L_s1 @ iter 01000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s1 @ iter 02000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 53.5%  (535/1000 correct)
+
+=== cond_L_s1 @ iter 03000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 91.4%  (914/1000 correct)
+
+=== cond_L_s1 @ iter 04000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.2%  (962/1000 correct)
+
+=== cond_L_s1 @ iter 05000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.9%  (979/1000 correct)
+
+=== cond_L_s1 @ iter 06000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.0%  (980/1000 correct)
+
+=== cond_L_s1 @ iter 07000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s1 @ iter 08000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s1 @ iter 09000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s1 @ iter 10000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s1 @ iter 11000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_L_s1 @ iter 12000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 92.7%  (927/1000 correct)
+
+=== cond_L_s1 @ iter 13000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s1 @ iter 14000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s1 @ iter 15000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_L_s1 @ iter 16000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s1 @ iter 17000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s1 @ iter 18000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s1 @ iter 19000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s1 @ iter 20000 ===
+Overriding: out_dir = out/cond_L_s1
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s1/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s1/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s2 @ iter 01000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s2 @ iter 02000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 66.9%  (669/1000 correct)
+
+=== cond_L_s2 @ iter 03000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.2%  (962/1000 correct)
+
+=== cond_L_s2 @ iter 04000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 84.4%  (844/1000 correct)
+
+=== cond_L_s2 @ iter 05000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.1%  (971/1000 correct)
+
+=== cond_L_s2 @ iter 06000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 49.3%  (493/1000 correct)
+
+=== cond_L_s2 @ iter 07000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s2 @ iter 08000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_L_s2 @ iter 09000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s2 @ iter 10000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_L_s2 @ iter 11000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s2 @ iter 12000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s2 @ iter 13000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_L_s2 @ iter 14000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s2 @ iter 15000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_L_s2 @ iter 16000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s2 @ iter 17000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s2 @ iter 18000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_L_s2 @ iter 19000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_L_s2 @ iter 20000 ===
+Overriding: out_dir = out/cond_L_s2
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s2/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s2/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_L_s3 @ iter 01000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s3 @ iter 02000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 39.0%  (390/1000 correct)
+
+=== cond_L_s3 @ iter 03000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 93.8%  (938/1000 correct)
+
+=== cond_L_s3 @ iter 04000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 23.3%  (233/1000 correct)
+
+=== cond_L_s3 @ iter 05000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_L_s3 @ iter 06000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.4%  (974/1000 correct)
+
+=== cond_L_s3 @ iter 07000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 94.8%  (948/1000 correct)
+
+=== cond_L_s3 @ iter 08000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s3 @ iter 09000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 94.1%  (941/1000 correct)
+
+=== cond_L_s3 @ iter 10000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_L_s3 @ iter 11000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.0%  (980/1000 correct)
+
+=== cond_L_s3 @ iter 12000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_L_s3 @ iter 13000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_L_s3 @ iter 14000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
+
+=== cond_L_s3 @ iter 15000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_L_s3 @ iter 16000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_L_s3 @ iter 17000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_L_s3 @ iter 18000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s3 @ iter 19000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.9%  (989/1000 correct)
+
+=== cond_L_s3 @ iter 20000 ===
+Overriding: out_dir = out/cond_L_s3
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s3/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s3/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.3%  (983/1000 correct)
+
+=== cond_L_s4 @ iter 01000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s4 @ iter 02000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 30.5%  (305/1000 correct)
+
+=== cond_L_s4 @ iter 03000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 5.8%  (58/1000 correct)
+
+=== cond_L_s4 @ iter 04000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 91.8%  (918/1000 correct)
+
+=== cond_L_s4 @ iter 05000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 97.5%  (975/1000 correct)
+
+=== cond_L_s4 @ iter 06000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_L_s4 @ iter 07000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.5%  (985/1000 correct)
+
+=== cond_L_s4 @ iter 08000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 85.2%  (852/1000 correct)
+
+=== cond_L_s4 @ iter 09000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s4 @ iter 10000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s4 @ iter 11000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 94.1%  (941/1000 correct)
+
+=== cond_L_s4 @ iter 12000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.1%  (981/1000 correct)
+
+=== cond_L_s4 @ iter 13000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s4 @ iter 14000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.8%  (998/1000 correct)
+
+=== cond_L_s4 @ iter 15000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_L_s4 @ iter 16000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_L_s4 @ iter 17000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s4 @ iter 18000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.7%  (997/1000 correct)
+
+=== cond_L_s4 @ iter 19000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_L_s4 @ iter 20000 ===
+Overriding: out_dir = out/cond_L_s4
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s4/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s4/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s5 @ iter 01000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_01000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s5 @ iter 02000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_02000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.1%  (1/1000 correct)
+
+=== cond_L_s5 @ iter 03000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_03000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 85.9%  (859/1000 correct)
+
+=== cond_L_s5 @ iter 04000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_04000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 95.0%  (950/1000 correct)
+
+=== cond_L_s5 @ iter 05000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_05000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 65.4%  (654/1000 correct)
+
+=== cond_L_s5 @ iter 06000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_06000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 96.2%  (962/1000 correct)
+
+=== cond_L_s5 @ iter 07000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_07000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.6%  (986/1000 correct)
+
+=== cond_L_s5 @ iter 08000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_08000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 0.0%  (0/1000 correct)
+
+=== cond_L_s5 @ iter 09000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_09000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.0%  (990/1000 correct)
+
+=== cond_L_s5 @ iter 10000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_10000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.8%  (988/1000 correct)
+
+=== cond_L_s5 @ iter 11000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_11000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_11000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=11000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s5 @ iter 12000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_12000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_12000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=12000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.2%  (992/1000 correct)
+
+=== cond_L_s5 @ iter 13000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_13000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_13000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=13000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.8%  (998/1000 correct)
+
+=== cond_L_s5 @ iter 14000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_14000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_14000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=14000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.6%  (996/1000 correct)
+
+=== cond_L_s5 @ iter 15000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_15000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_15000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=15000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s5 @ iter 16000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_16000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_16000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=16000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.1%  (991/1000 correct)
+
+=== cond_L_s5 @ iter 17000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_17000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_17000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=17000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 98.7%  (987/1000 correct)
+
+=== cond_L_s5 @ iter 18000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_18000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_18000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=18000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.4%  (994/1000 correct)
+
+=== cond_L_s5 @ iter 19000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_19000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_19000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=19000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.3%  (993/1000 correct)
+
+=== cond_L_s5 @ iter 20000 ===
+Overriding: out_dir = out/cond_L_s5
+Overriding: dataset = scratchpad_4digit
+Overriding: ckpt_path = out/cond_L_s5/ckpt_20000.pt
+Overriding: benchmark_target = val
+Overriding: eval_max_samples = 1000
+Loading checkpoint: out/cond_L_s5/ckpt_20000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=20000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\scratchpad_4digit\val.jsonl --
+  Exact-match: 99.5%  (995/1000 correct)
