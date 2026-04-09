@@ -51,10 +51,10 @@ Reuse Exp 6 A/B (plain 2-digit) and C/D (scratchpad 2-digit) results. Add new co
 
 ### Dataset
 
-- **Plain 3-digit:** random sample of 10,000 pairs (100–999 + 100–999), 90/10 train/val split
-- **Plain 4-digit:** random sample of 10,000 pairs (1000–9999 + 1000–9999), 90/10 split
-- **Scratchpad 3-digit:** random sample of 10,000 pairs, 90/10 split
-- **Scratchpad 4-digit:** random sample of 10,000 pairs, 90/10 split
+- **Plain 3-digit:** random sample of 30,000 pairs (100–999 + 100–999), 90/10 train/val split
+- **Plain 4-digit:** random sample of 30,000 pairs (1000–9999 + 1000–9999), 90/10 split
+- **Scratchpad 3-digit:** random sample of 30,000 pairs, 90/10 split
+- **Scratchpad 4-digit:** random sample of 30,000 pairs, 90/10 split
 
 ### Input Fraction by Condition
 
@@ -73,14 +73,15 @@ For scratchpad, it decreases further as digits grow.
 ### Config
 
 - `block_size`: 64 (plain), 128 (scratchpad)
-- `max_iters`: 10,000
-- `n_layer`: 4, `n_head`: 4, `n_embd`: 128 (same as Exp 6)
-- Seeds: 3 per condition
+- `max_iters`: 20,000
+- `n_layer`: 6, `n_head`: 4, `n_embd`: 128 (same as Exp 6)
+- Seeds: 5 per condition
 
 ### Primary Metric
 
-AR exact-match accuracy on same-distribution test set at iter 10,000.
+AR exact-match accuracy on same-distribution test set at iter 20,000.
 Masking gap = accuracy(mask) − accuracy(no mask).
+Secondary metric: first iter where accuracy exceeds 80% (convergence speed).
 
 ### Expected Outcome
 
