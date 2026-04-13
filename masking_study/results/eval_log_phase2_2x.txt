@@ -1,0 +1,1559 @@
+=== cond_O_s1 @ iter 00500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 1.6%  (13/810 correct)
+
+=== cond_O_s1 @ iter 01000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 42.3%  (343/810 correct)
+
+=== cond_O_s1 @ iter 01500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 89.4%  (724/810 correct)
+
+=== cond_O_s1 @ iter 02000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 96.3%  (780/810 correct)
+
+=== cond_O_s1 @ iter 02500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 90.7%  (735/810 correct)
+
+=== cond_O_s1 @ iter 03000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s1 @ iter 03500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 96.3%  (780/810 correct)
+
+=== cond_O_s1 @ iter 04000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s1 @ iter 04500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_O_s1 @ iter 05000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s1 @ iter 05500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_O_s1 @ iter 06000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s1 @ iter 06500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s1 @ iter 07000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_O_s1 @ iter 07500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.8%  (800/810 correct)
+
+=== cond_O_s1 @ iter 08000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s1 @ iter 08500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_O_s1 @ iter 09000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s1 @ iter 09500 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s1 @ iter 10000 ===
+Overriding: out_dir = out/cond_O_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s1/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s1/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s2 @ iter 00500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 1.5%  (12/810 correct)
+
+=== cond_O_s2 @ iter 01000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 42.3%  (343/810 correct)
+
+=== cond_O_s2 @ iter 01500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 91.5%  (741/810 correct)
+
+=== cond_O_s2 @ iter 02000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 96.8%  (784/810 correct)
+
+=== cond_O_s2 @ iter 02500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s2 @ iter 03000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 97.5%  (790/810 correct)
+
+=== cond_O_s2 @ iter 03500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s2 @ iter 04000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 93.3%  (756/810 correct)
+
+=== cond_O_s2 @ iter 04500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s2 @ iter 05000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 93.8%  (760/810 correct)
+
+=== cond_O_s2 @ iter 05500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s2 @ iter 06000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_O_s2 @ iter 06500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s2 @ iter 07000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_O_s2 @ iter 07500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.9%  (809/810 correct)
+
+=== cond_O_s2 @ iter 08000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s2 @ iter 08500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_O_s2 @ iter 09000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_O_s2 @ iter 09500 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_O_s2 @ iter 10000 ===
+Overriding: out_dir = out/cond_O_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s2/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s2/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s3 @ iter 00500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 1.5%  (12/810 correct)
+
+=== cond_O_s3 @ iter 01000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 34.3%  (278/810 correct)
+
+=== cond_O_s3 @ iter 01500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 83.8%  (679/810 correct)
+
+=== cond_O_s3 @ iter 02000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 93.1%  (754/810 correct)
+
+=== cond_O_s3 @ iter 02500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.0%  (794/810 correct)
+
+=== cond_O_s3 @ iter 03000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_O_s3 @ iter 03500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.8%  (800/810 correct)
+
+=== cond_O_s3 @ iter 04000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s3 @ iter 04500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s3 @ iter 05000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s3 @ iter 05500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_O_s3 @ iter 06000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_O_s3 @ iter 06500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.5%  (798/810 correct)
+
+=== cond_O_s3 @ iter 07000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s3 @ iter 07500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_O_s3 @ iter 08000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_O_s3 @ iter 08500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s3 @ iter 09000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_O_s3 @ iter 09500 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_O_s3 @ iter 10000 ===
+Overriding: out_dir = out/cond_O_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_O_s3/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_O_s3/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_P_s1 @ iter 00500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 1.1%  (9/810 correct)
+
+=== cond_P_s1 @ iter 01000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 59.0%  (478/810 correct)
+
+=== cond_P_s1 @ iter 01500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 89.6%  (726/810 correct)
+
+=== cond_P_s1 @ iter 02000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 94.6%  (766/810 correct)
+
+=== cond_P_s1 @ iter 02500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 97.3%  (788/810 correct)
+
+=== cond_P_s1 @ iter 03000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.0%  (794/810 correct)
+
+=== cond_P_s1 @ iter 03500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.6%  (807/810 correct)
+
+=== cond_P_s1 @ iter 04000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_P_s1 @ iter 04500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.1%  (795/810 correct)
+
+=== cond_P_s1 @ iter 05000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s1 @ iter 05500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_P_s1 @ iter 06000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_P_s1 @ iter 06500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s1 @ iter 07000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s1 @ iter 07500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_P_s1 @ iter 08000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.8%  (800/810 correct)
+
+=== cond_P_s1 @ iter 08500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_P_s1 @ iter 09000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_P_s1 @ iter 09500 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_P_s1 @ iter 10000 ===
+Overriding: out_dir = out/cond_P_s1
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s1/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s1/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_P_s2 @ iter 00500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 1.4%  (11/810 correct)
+
+=== cond_P_s2 @ iter 01000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 43.3%  (351/810 correct)
+
+=== cond_P_s2 @ iter 01500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 82.6%  (669/810 correct)
+
+=== cond_P_s2 @ iter 02000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 94.7%  (767/810 correct)
+
+=== cond_P_s2 @ iter 02500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 97.7%  (791/810 correct)
+
+=== cond_P_s2 @ iter 03000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 97.2%  (787/810 correct)
+
+=== cond_P_s2 @ iter 03500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_P_s2 @ iter 04000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_P_s2 @ iter 04500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_P_s2 @ iter 05000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s2 @ iter 05500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_P_s2 @ iter 06000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s2 @ iter 06500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s2 @ iter 07000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s2 @ iter 07500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
+
+=== cond_P_s2 @ iter 08000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_P_s2 @ iter 08500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_P_s2 @ iter 09000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_P_s2 @ iter 09500 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.8%  (800/810 correct)
+
+=== cond_P_s2 @ iter 10000 ===
+Overriding: out_dir = out/cond_P_s2
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s2/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s2/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_P_s3 @ iter 00500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_00500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_00500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 0.5%  (4/810 correct)
+
+=== cond_P_s3 @ iter 01000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_01000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_01000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 46.3%  (375/810 correct)
+
+=== cond_P_s3 @ iter 01500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_01500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_01500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=1500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 89.3%  (723/810 correct)
+
+=== cond_P_s3 @ iter 02000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_02000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_02000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 93.3%  (756/810 correct)
+
+=== cond_P_s3 @ iter 02500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_02500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_02500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=2500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.9%  (801/810 correct)
+
+=== cond_P_s3 @ iter 03000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_03000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_03000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 96.3%  (780/810 correct)
+
+=== cond_P_s3 @ iter 03500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_03500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_03500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=3500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s3 @ iter 04000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_04000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_04000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.4%  (805/810 correct)
+
+=== cond_P_s3 @ iter 04500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_04500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_04500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=4500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 97.4%  (789/810 correct)
+
+=== cond_P_s3 @ iter 05000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_05000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_05000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_P_s3 @ iter 05500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_05500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_05500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=5500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_P_s3 @ iter 06000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_06000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_06000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.5%  (806/810 correct)
+
+=== cond_P_s3 @ iter 06500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_06500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_06500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=6500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.1%  (803/810 correct)
+
+=== cond_P_s3 @ iter 07000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_07000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_07000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.8%  (808/810 correct)
+
+=== cond_P_s3 @ iter 07500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_07500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_07500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=7500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_P_s3 @ iter 08000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_08000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_08000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.0%  (802/810 correct)
+
+=== cond_P_s3 @ iter 08500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_08500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_08500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=8500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_P_s3 @ iter 09000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_09000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_09000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.6%  (799/810 correct)
+
+=== cond_P_s3 @ iter 09500 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_09500.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_09500.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=9500, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 98.5%  (798/810 correct)
+
+=== cond_P_s3 @ iter 10000 ===
+Overriding: out_dir = out/cond_P_s3
+Overriding: dataset = phase2_2x
+Overriding: ckpt_path = out/cond_P_s3/ckpt_10000.pt
+Overriding: benchmark_target = val
+Loading checkpoint: out/cond_P_s3/ckpt_10000.pt
+number of parameters: 1.18M
+Model loaded  (checkpoint iter=10000, n_layer=6, n_head=4, n_embd=128)
+Tokenizer ready  (vocab_size=17)
+
+-- [val] data\phase2_2x\val.jsonl --
+  Exact-match: 99.3%  (804/810 correct)
