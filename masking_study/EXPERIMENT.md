@@ -286,3 +286,119 @@ The accuracy difference between Exp 6 plain (83.5%) and Exp 7 plain (98.1–98.2
 
 ---
 
+## Phase 2 Setup
+
+### Research Question
+
+If input fraction is the causal variable, artificially increasing the input fraction of scratchpad sequences should cause the masking benefit to grow. Phase 2 tests this by repeating the input prefix 1–5 times while keeping the scratchpad output identical:
+
+- 1x: `12+34=[2+4=6,C0][1+3=4,C0]46\n` — input fraction ~19%
+- 2x: `12+34=12+34=[2+4=6,C0][1+3=4,C0]46\n` — input fraction ~32%
+- 3x–5x: further repetitions, up to ~54%
+
+### Dataset
+
+All variants use 2-digit operands in range [10, 99] — exhaustive enumeration of 8,100 unique pairs. Train/val split 90/10.
+
+| Variant | Multiplier | Input fraction | Samples | Train | Val |
+|---|---|---|---|---|---|
+| phase2_1x | 1x | ~19% | 8,100 | 7,290 | 810 |
+| phase2_2x | 2x | ~32% | 8,100 | 7,290 | 810 |
+| phase2_3x | 3x | ~41% | 8,100 | 7,290 | 810 |
+| phase2_4x | 4x | ~48% | 8,100 | 7,290 | 810 |
+| phase2_5x | 5x | ~54% | 8,100 | 7,290 | 810 |
+
+### Conditions
+
+| Condition | Multiplier | Input fraction | Masking |
+|---|---|---|---|
+| M | 1x | ~19% | No |
+| N | 1x | ~19% | Yes |
+| O | 2x | ~32% | No |
+| P | 2x | ~32% | Yes |
+| Q | 3x | ~41% | No |
+| R | 3x | ~41% | Yes |
+| S | 4x | ~48% | No |
+| T | 4x | ~48% | Yes |
+| U | 5x | ~54% | No |
+| V | 5x | ~54% | Yes |
+
+### Model Configuration
+
+Same architecture as Phase 1 scratchpad. All conditions: n_layer=6, n_head=4, n_embd=128, block_size=64, max_iters=10,000, eval_interval=500, 3 seeds (1337–1339).
+
+### Eval Procedure
+
+AR exact-match on all 810 val samples (no `--eval_max_samples` limit), evaluated post-hoc at 20 checkpoints per run (every 500 iters). Peak accuracy = max across all checkpoints per seed.
+
+---
+
+## Phase 2 Results
+
+### Summary Table
+
+| Condition | Multiplier | Mask | Mean peak (%) | Std | Masking gap (pp) |
+|---|---|---|---|---|---|
+| M | 1x | No | 99.17 | 0.12 | — |
+| N | 1x | Yes | 99.40 | 0.00 | +0.23 |
+| O | 2x | No | 99.77 | 0.15 | — |
+| P | 2x | Yes | 99.80 | 0.00 | +0.03 |
+| Q | 3x | No | 99.53 | 0.06 | — |
+| R | 3x | Yes | 99.80 | 0.00 | +0.27 |
+| S | 4x | No | 99.63 | 0.23 | — |
+| T | 4x | Yes | 99.73 | 0.12 | +0.10 |
+| U | 5x | No | 99.80 | 0.00 | — |
+| V | 5x | Yes | 99.87 | 0.06 | +0.07 |
+
+All 10 conditions converge to 99–100% accuracy. Masking gaps are 0.03–0.27pp with no monotonic trend.
+
+### Accuracy Convergence Curves
+
+<img src="results/plots/accuracy_phase2_curves.png" width="1100" height="400" alt="Phase 2 accuracy convergence curves by multiplier">
+
+### Peak Accuracy vs Multiplier
+
+<img src="results/plots/accuracy_phase2_summary.png" width="700" height="400" alt="Phase 2 peak accuracy vs input fraction multiplier">
+
+### Masking Gap by Multiplier
+
+<img src="results/plots/accuracy_phase2_gap.png" width="700" height="400" alt="Phase 2 masking gap bar chart">
+
+### Val Loss Curves
+
+<img src="results/plots/val_loss_phase2_curves.png" width="1100" height="400" alt="Phase 2 val loss convergence curves by multiplier">
+
+---
+
+## Phase 2 Interpretation
+
+### Ceiling Effect
+
+All Phase 2 conditions, masked and unmasked alike, converge to ~99–100% accuracy regardless of input fraction multiplier. The masking gap is effectively zero across all five multipliers (0.03–0.27pp), with no monotonic trend. Phase 2 is therefore **uninformative** about the input fraction hypothesis: when both conditions trivially solve the task, there is no gap to explain.
+
+### Why the Ceiling Effect Occurred — A Design Flaw
+
+Exp 6 scratchpad (conditions C/D) converged at ~88% AR accuracy on the same 2-digit scratchpad task. Phase 2 conditions converge at ~99–100%. The most plausible explanation is a structural difference in the dataset introduced by the range choice, though other factors (dataset size: 10,000 → 8,100 pairs; training distribution) also changed and cannot be fully ruled out:
+
+- **Exp 6:** operands drawn from range 0–99 (10,000 pairs). This includes 1-digit operands (0–9), so input length varies: `"a+b"`, `"a+bc"`, `"ab+c"`, `"ab+cd"` — four distinct tokenization patterns. Output bracket count also varies (1, 2, or 3 brackets depending on carry structure). This diversity makes generalization harder.
+- **Phase 2:** operands drawn from range 10–99 (8,100 pairs). Every operand is exactly 2 digits, so the input is always `"XX+YY"` — a single 5-character pattern. Output still has 2 or 3 brackets, but the uniform input length means the model only needs to learn one positional template, making the task much easier to generalize.
+
+The [10, 99] range choice most likely contributed to both unmasked and masked conditions reaching ceiling, eliminating any measurable masking benefit before the input fraction manipulation could take effect. This is a plausible diagnosis rather than a demonstrated mechanism — the exact cause was not isolated.
+
+### The Fundamental Experimental Design Problem
+
+To causally test whether input fraction drives masking benefit, the experiment required a baseline where masking actually makes a difference — i.e., a condition where the unmasked model fails or underperforms. Phase 2 never established this baseline. Even at 1x input fraction (~19%), the unmasked model achieves 99.17%, leaving no room for masking to show an improvement.
+
+More broadly, isolating input fraction as the sole variable is structurally difficult in this setting: repeating the input prefix changes not only the input fraction but also the sequence length and the task structure the model must process. Keeping task difficulty constant while varying input fraction requires a different experimental design than what Phase 2 implemented.
+
+---
+
+## Overall Conclusion
+
+Exp 7 did not produce a valid causal test of the input fraction hypothesis.
+
+- **Phase 1** is best interpreted as a consistency check: the scratchpad masking gap remains near zero as digit length increases (replicating Exp 6 robustly), and the plain side is inconclusive due to ceiling effects and one slow-converging outlier. Phase 1 changed digit length, dataset size, task difficulty, and training duration simultaneously — it cannot isolate input fraction as the causal variable.
+- **Phase 2** suffered from an experiment design flaw: the [10, 99] digit range produced a structurally uniform task that both masked and unmasked conditions solved trivially (~99–100%), leaving no masking gap to measure across any of the five input fraction multipliers.
+
+**The input fraction hypothesis remains open.** A valid test would require: (1) a baseline condition where masking makes a meaningful difference, and (2) a manipulation that varies input fraction without simultaneously changing task difficulty or structure.
+
