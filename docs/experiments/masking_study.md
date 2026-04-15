@@ -12,10 +12,11 @@ Full results: see [masking_study/EXPERIMENT.md](../../masking_study/EXPERIMENT.m
 
 - **Background:** Exp 6 showed masking raises plain 2-digit accuracy by +6.4pp but has ~0pp effect on scratchpad 2-digit. Hypothesis: benefit scales with input token fraction (~75% plain vs ~19% scratchpad).
 - **Phase 1 design:** Extend both formats to 3-digit and 4-digit; reuse Exp 6 A–D as 2-digit reference.
-- **Dataset:** 30,000 samples per new variant, 90/10 train/val split.
-- **Model:** `n_layer=6, n_head=4, n_embd=128`; `block_size=64` (plain), `block_size=128` (scratchpad).
-- **Training:** `max_iters=20,000`, `eval_interval=500`, 5 seeds per condition (1337–1341).
-- **Eval:** AR exact-match on 1,000-sample val set, post-hoc on 20 checkpoints per run.
+- **Phase 2 design:** Hold format constant (2-digit scratchpad) and artificially vary input fraction by repeating the input prefix 1–5x (conditions M–V).
+
+---
+
+## Phase 1
 
 ### Conditions
 
@@ -34,50 +35,86 @@ Full results: see [masking_study/EXPERIMENT.md](../../masking_study/EXPERIMENT.m
 | K | Scratchpad | 4-digit | No | New |
 | L | Scratchpad | 4-digit | Yes | New |
 
----
+30,000 samples per new variant, 90/10 split. `max_iters=20,000`, 5 seeds per condition.
 
-## Results
+### Peak AR Accuracy
 
-### Peak AR Accuracy (mean across 5 seeds)
+| Condition | Format | Digits | Mask | Peak Acc (mean±std) |
+|---|---|---|---|---|
+| A | Plain | 2 | No | 83.5±0.7% |
+| B | Plain | 2 | Yes | 89.9±0.2% |
+| C | Scratchpad | 2 | No | 86.8±0.7% |
+| D | Scratchpad | 2 | Yes | 86.0±1.0% |
+| E | Plain | 3 | No | 98.1±1.1% |
+| F | Plain | 3 | Yes | 90.9±20.0%* |
+| G | Plain | 4 | No | 98.2±1.0% |
+| H | Plain | 4 | Yes | 99.1±0.6% |
+| I | Scratchpad | 3 | No | 99.8±0.1% |
+| J | Scratchpad | 3 | Yes | 99.9±0.1% |
+| K | Scratchpad | 4 | No | 99.7±0.0% |
+| L | Scratchpad | 4 | Yes | 99.7±0.2% |
 
-| Condition | Format | Digits | Mask | Peak Acc (mean±std) | First iter >80% |
-|---|---|---|---|---|---|
-| A | Plain | 2 | No | 83.5±0.7% | ~4,000 |
-| B | Plain | 2 | Yes | 89.9±0.2% | ~4,667 |
-| C | Scratchpad | 2 | No | 86.8±0.7% | ~3,000 |
-| D | Scratchpad | 2 | Yes | 86.0±1.0% | ~3,000 |
-| E | Plain | 3 | No | 98.1±1.1% | 5,200 |
-| F | Plain | 3 | Yes | 90.9±20.0% | 6,750 |
-| G | Plain | 4 | No | 98.2±1.0% | 5,400 |
-| H | Plain | 4 | Yes | 99.1±0.6% | 8,400 |
-| I | Scratchpad | 3 | No | 99.8±0.1% | 3,000 |
-| J | Scratchpad | 3 | Yes | 99.9±0.1% | 3,000 |
-| K | Scratchpad | 4 | No | 99.7±0.0% | 3,200 |
-| L | Scratchpad | 4 | Yes | 99.7±0.2% | 3,200 |
+*F_s4 peaked at 55.1% and declined to 49.8% without converging. The four converged F seeds averaged 99.2%.
 
 ### Masking Gaps
 
 | Format | Digits | Gap (masked − unmasked) |
 |---|---|---|
 | Plain | 2 | +6.4pp (Exp 6) |
-| Plain | 3 | −7.2pp* |
+| Plain | 3 | inconclusive* |
 | Plain | 4 | +0.9pp |
 | Scratchpad | 2 | −0.8pp (Exp 6) |
 | Scratchpad | 3 | +0.1pp |
 | Scratchpad | 4 | +0.0pp |
 
-*Cond F mean distorted by one slow-converging seed (F_s4, 55.1% at iter 20k). Excluding F_s4, the adjusted 3-digit plain gap is approximately +1.1pp.
+*3-digit plain gap is distorted by the F_s4 outlier; treated as inconclusive.
+
+### Phase 1 Key Findings
+
+- **Scratchpad gap stays at zero across digit lengths.** All 10 scratchpad-masked seeds (I/J, K/L) converge to 99.7–100.0% identically to unmasked, replicating the Exp 6 C≈D result at 3-digit and 4-digit.
+- **Plain masking gap is inconclusive at 3/4-digit.** Both masked and unmasked plain conditions reach 98–99%, compressing any gap below what can be defended with a 1,000-sample eval subset and no statistical test.
+- **Masking consistently slows convergence for plain addition.** Masked conditions take 1,550–3,000 more iters to reach 80% than unmasked. Scratchpad shows no such delay.
+- **Phase 1 is a consistency check, not a causal test.** Digit length, dataset size, training steps, and task difficulty all changed simultaneously.
 
 ---
 
-## Key Findings
+## Phase 2
 
-- **Scratchpad gap stays at zero across digit lengths.** All 10 scratchpad-masked seeds (I/J and K/L) converge to 99.7–100.0% identically to unmasked, replicating the Exp 6 C≈D result at both 3-digit and 4-digit. Input fraction ~16–17% is too low for masking to have any effect.
+### Conditions
 
-- **Plain masking gap is inconclusive at 3/4-digit.** Both masked and unmasked conditions reach 98–99%, compressing any gap below the level that can be defended with a 1,000-sample eval subset and no statistical test. Cond F (3-digit masked) is additionally distorted by one outlier seed (F_s4) that peaked at 55.1% then declined.
+| Condition | Multiplier | Input fraction | Masking |
+|---|---|---|---|
+| M | 1x | ~19% | No |
+| N | 1x | ~19% | Yes |
+| O | 2x | ~32% | No |
+| P | 2x | ~32% | Yes |
+| Q | 3x | ~41% | No |
+| R | 3x | ~41% | Yes |
+| S | 4x | ~48% | No |
+| T | 4x | ~48% | Yes |
+| U | 5x | ~54% | No |
+| V | 5x | ~54% | Yes |
 
-- **Masking consistently slows convergence for plain addition.** Plain masked conditions take 1,550–3,000 more iters to reach 80% accuracy than their unmasked counterparts. Scratchpad conditions show no such delay.
+8,100 exhaustive pairs per variant (range 10–99), 90/10 split. `max_iters=10,000`, 3 seeds per condition.
 
-- **Scratchpad converges faster than plain in all cases.** Scratchpad reaches >80% by iter 3,000–3,200; plain requires 5,200–8,400 iters. Chain-of-thought output structure helps optimization independent of masking.
+### Peak AR Accuracy
 
-- **Results are consistent with the hypothesis but do not establish it causally.** Phase 1 changes digit length, dataset size, training steps, and task difficulty simultaneously — it is a consistency check, not a causal test. The scratchpad replication is robust; the plain side is inconclusive.
+| Multiplier | No-mask peak | Masked peak | Gap |
+|---|---|---|---|
+| 1x | 99.17±0.12% | 99.40±0.00% | +0.23pp |
+| 2x | 99.77±0.15% | 99.80±0.00% | +0.03pp |
+| 3x | 99.53±0.06% | 99.80±0.00% | +0.27pp |
+| 4x | 99.63±0.23% | 99.73±0.12% | +0.10pp |
+| 5x | 99.80±0.00% | 99.87±0.06% | +0.07pp |
+
+### Phase 2 Key Findings
+
+- **Ceiling effect renders Phase 2 uninformative.** All 10 conditions converge to 99–100% with masking gaps of 0.03–0.27pp and no monotonic trend. There is no gap to explain.
+- **The ceiling arose from a design flaw.** The [10, 99] digit range produces a structurally uniform task (always `"XX+YY"` input), making the task easier than Exp 6's 0–99 range. Both masked and unmasked conditions trivially solve it before input fraction can have any effect.
+- **Phase 2 failed to test the hypothesis.** A valid causal test requires a baseline where masking makes a meaningful difference. Phase 2 never established one.
+
+---
+
+## Overall Conclusion
+
+Exp 7 did not produce a valid causal test of the input fraction hypothesis. Phase 1 is a consistency check; Phase 2 had a design flaw that produced a ceiling effect. **The hypothesis remains open.**
