@@ -1,18 +1,21 @@
 # CLAUDE.md — comp560-aaronshin43
 
-Aaron Shin's COMP560 (Dickinson, Spring 2026) research project. Experiments using tiny Transformers (nanoGPT).
+Aaron Shin's COMP560 (Dickinson, Spring 2026) research project. Experiments using small Transformer models and related training engines.
 
 ---
 
 ## Repo Layout
 
-This project spans **two sibling repos** that must be checked out at the same level:
+This project spans **multiple sibling repos** checked out at the same level:
 
 ```
 d:\03_Coding\
-├── comp560-nanoGPT/     ← shared training/eval engine (nanoGPT fork)
-└── comp560-aaronshin43/ ← this repo: data, configs, per-experiment scripts
+├── comp560-nanoGPT/       ← shared training/eval engine (nanoGPT fork)
+├── autoresearch/          ← shared LM benchmarking engine (Karpathy's autoresearch)
+└── comp560-aaronshin43/   ← this repo: plans, data, configs, experiment docs/results
 ```
+
+Engine repos (`comp560-nanoGPT/`, `autoresearch/`) remain as sibling checkouts and are never copied into experiment folders. Experiment folders in this repo store plans, results, plots, and reports only.
 
 Each experiment lives in its own subdirectory inside `comp560-aaronshin43/`:
 
@@ -25,10 +28,14 @@ Each experiment lives in its own subdirectory inside `comp560-aaronshin43/`:
 | `addition_scratchpad/` | Exp 5 — Scratchpad length generalization | 4-phase curriculum; uses `train_benchmark.py` + `eval_scratchpad.py` |
 | `masking_benchmark/` | Exp 6 — Target masking benchmark | Convergence curve study (A/B plain + C/D scratchpad); post-hoc AR eval on named snapshots |
 | `masking_study/` | Exp 7 — Masking input fraction study | Two-phase validation of Exp 6 hypothesis: digit-length extension (Phase 1) + input fraction manipulation (Phase 2) |
+| `autoresearch-preln/` | Exp 8 — Pre-LN vs Post-LN reproduction | Uses sibling `autoresearch/` repo; docs/results live here |
+| `autoresearch-scaling/` | Planned — Small-scale scaling law study | Uses sibling `autoresearch/` repo; docs/results live here |
 
 ---
 
 ## How Commands Work
+
+### nanoGPT-based Experiments (Exp 1–7)
 
 All training/sampling commands follow this pattern (run from the **experiment directory**):
 
@@ -47,6 +54,19 @@ NANOGPT_CONFIG=../../comp560-nanoGPT/configurator.py \
 - `eval_generation.py` runs standalone AR generation eval post-training.
 - `eval_scratchpad.py` runs AR eval with answer extraction (used only in Exp 5).
 
+### autoresearch-based Experiments (Exp 8+)
+
+For autoresearch experiments:
+
+- run code from the sibling `autoresearch/` repo
+- keep experiment docs, plans, and results in this repo under the experiment folder
+- record the exact engine branch and commit in the experiment's `PLAN.md` and final report
+
+When an experiment requires changes to the engine:
+
+- create an experiment-specific branch in the engine repo (e.g. `exp/preln`)
+- record engine repo path, branch, upstream commit, and changed files in `PLAN.md`
+
 ---
 
 ## Experiment Order & Progression
@@ -61,6 +81,8 @@ Each experiment built on the tooling of the previous one:
 - **Exp 4**: adds `.jsonl` splits, `train_benchmark.py`, target masking
 - **Exp 5**: adds scratchpad data format, `eval_scratchpad.py`, curriculum datasets
 - **Exp 6**: adds named checkpoint snapshots in `train_benchmark.py`, `--ckpt_path` in `eval_generation.py`; multi-seed convergence curve study
+
+The autoresearch experiments (Exp 8+) are a new branch of the project using a different sibling engine repo.
 
 ---
 
