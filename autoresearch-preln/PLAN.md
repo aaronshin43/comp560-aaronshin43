@@ -73,11 +73,35 @@ Record the following before the main runs:
 - Engine repo: `..\autoresearch`
 - Experiment branch: `exp/preln`
 - Worktree path if used:
-- Upstream/base commit:
+- Current base commit: `228791fb499afffb54b46200aca536f79142f117`
 - Experiment commit:
 - Changed files:
 
 All code changes should live in the `autoresearch/` repo. This directory stores planning, commands, results, and writeup only.
+
+---
+
+## Current Baseline In `train.py`
+
+The current `autoresearch` baseline is already:
+
+- **RMSNorm**
+- **Pre-LN**
+- **WARMUP_RATIO = 0.0**
+
+Concretely:
+
+- `norm(x)` uses `F.rms_norm(...)`
+- each block does `x = x + attn(norm(x), ...)` and `x = x + mlp(norm(x))`
+- the global warmup default is zero
+
+This means the practical experiment is not starting from a neutral Transformer baseline. It is starting from an already modernized baseline. Therefore:
+
+- Condition D (Pre-LN, no warmup) is the closest to the untouched baseline
+- Condition C requires only a warmup change
+- Conditions A/B require adding a Post-LN code path
+
+The writeup and final interpretation should reflect that this is a reproduction built on the current `autoresearch` codebase, not a fresh implementation from a canonical Post-LN baseline.
 
 ---
 
