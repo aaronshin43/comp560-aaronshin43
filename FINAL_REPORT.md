@@ -13,7 +13,7 @@ A common intuition is that target masking should accelerate training: by concent
 
 The central claim is:
 
-> Target masking does not accelerate training. It raises the long-run accuracy ceiling, and the mechanism is val-loss divergence on input-region tokens that the unmasked model is silently overfitting to.
+> Target masking does not accelerate training. It raises the long-run accuracy ceiling, and the mechanism is validation-loss divergence on input-region tokens that the unmasked model is silently overfitting to.
 
 A secondary cross-task experiment shows that the magnitude of the masking benefit is governed by the **fraction of each sequence that is input**, not by the absolute output length.
 
@@ -36,9 +36,9 @@ Crucially, the input tokens are still consumed by the forward pass — the model
 
 ### 2.2 Why a 2-Digit Addition Testbed
 
-The full Cartesian product of two-digit operands gives an exhaustive 10,000-sample dataset of pairs `{"input": "AB+CD=", "output": "ZZZ"}`. This testbed has three properties that make it suited for isolating the masking effect:
+The full Cartesian product of two-digit operands (100 × 100) gives an exhaustive 10,000-sample dataset of pairs `{"input": "AB+CD=", "output": "ZZZ"}`. This testbed has three properties that make it suited for isolating the masking effect:
 
-- **Deterministic ground truth**, so AR generation accuracy is a clean exact-match metric with no labeling noise.
+- **Deterministic ground truth**, so autoregressive generation accuracy is a clean exact-match metric with no labeling noise.
 - **High input/output token ratio** (≈70/30) — if the unmasked model is wasting capacity on input prediction, this is the regime where it should be most visible.
 - **Character-level vocabulary** with 13 unique tokens, removing tokenizer artifacts as a confound.
 
@@ -66,11 +66,13 @@ The split is 9,000 train / 1,000 val, shuffled with a fixed seed.
 | Batch size | 128 |
 | Seeds | 1337, 1338, 1339 |
 
+`block_size` is the context window length: the trainer concatenates training samples into one long stream of token IDs and samples random windows of this length to form each batch. With sequences averaging ~10 characters, a 64-token window contains ~6–8 complete equations end-to-end. This detail will be important in §5.2.
+
 Three seeds per condition were used to bound run-to-run variance.
 
 ### 2.5 Evaluation Protocol
 
-AR accuracy is evaluated **post-hoc** on 20 named checkpoints saved every 500 iterations (`ckpt_00500.pt` through `ckpt_10000.pt`). At each checkpoint, the model is prompted with `input=` only and generates autoregressively until newline; the produced digits are compared exactly to ground truth on the full 1,000-sample val split. This decouples the convergence-curve measurement from the training loop and guarantees identical evaluation conditions across all checkpoints and seeds.
+Autoregressive accuracy is evaluated **post-hoc** on 20 named checkpoints saved every 500 iterations (`ckpt_00500.pt` through `ckpt_10000.pt`). At each checkpoint, the model is prompted with `input=` only and generates autoregressively until newline; the produced digits are compared exactly to ground truth on the full 1,000-sample val split. This decouples the convergence-curve measurement from the training loop and guarantees identical evaluation conditions across all checkpoints and seeds.
 
 ---
 
@@ -94,7 +96,11 @@ This negative result is sharp enough that it does not require a statistical test
 
 ## 4. The Ceiling Effect
 
-The two conditions diverge after iteration 5,000, but not in the way the speed hypothesis predicted. Instead of one curve overtaking the other on the way to a shared asymptote, the unmasked condition simply stops improving while the masked condition continues to climb.
+The two conditions diverge after iteration 5,000, but not in the way the speed hypothesis predicted. Instead of one curve overtaking the other on the way to a shared asymptote, the unmasked condition simply stops improving while the masked condition continues to climb (Figure 1).
+
+<img width="1000" height="625" alt="Figure 1: autoregressive accuracy convergence — Cond A vs Cond B" src="masking_benchmark/results/AR_accuracy_convergence_curve_ab.png" />
+
+*Figure 1. Autoregressive generation accuracy on the 1,000-sample val split, evaluated at 20 named checkpoints across 10,000 training iterations. Bands are mean ± std over 3 seeds. The two conditions track each other through iter ~5,000, then separate decisively: Cond B continues to ~90%, while Cond A plateaus and oscillates between 80–85%.*
 
 | Phase | Cond A | Cond B |
 |---|---|---|
@@ -102,7 +108,7 @@ The two conditions diverge after iteration 5,000, but not in the way the speed h
 | iter 5,000 – 10,000 | Flat oscillation, 80–85% | Sustained improvement to 89–90% |
 | Final (iter 10,000) | **83.5 ± 0.9%** | **89.9 ± 0.2%** |
 
-The +6.4pp gap is consistent across seeds (Cond B's seeds land at 89.8, 90.2, 89.8 — a standard deviation of 0.2pp), and Cond A never crosses 85% on any seed in the second half of training. This is the central empirical finding of the report:
+The +6.4 percentage-point (pp) gap is consistent across seeds (Cond B's seeds land at 89.8, 90.2, 89.8 — a standard deviation of 0.2pp), and Cond A never crosses 85% on any seed in the second half of training. This is the central empirical finding of the report:
 
 > Target masking buys a higher ceiling, not a steeper slope.
 
@@ -110,11 +116,15 @@ The cost is a wall-clock overhead of ~8% (180s → 194s mean training time) and 
 
 ---
 
-## 5. Mechanism: Val-Loss Divergence on Input Tokens
+## 5. Mechanism: Validation-Loss Divergence on Input Tokens
 
 The accuracy curves alone show *that* masking changes the long-run behavior; the validation loss curves show *why*.
 
-### 5.1 The Val-Loss Curves
+### 5.1 The Validation-Loss Curves
+
+<img width="1000" height="625" alt="Figure 2: validation loss curves — Cond A vs Cond B" src="masking_benchmark/results/val_loss_curve_ab.png" />
+
+*Figure 2. Per-iteration validation cross-entropy loss for Cond A and Cond B, mean ± std over 3 seeds. Cond B decreases monotonically and stabilizes near 0.12. Cond A reaches a minimum of ~1.07 at iteration 3,000, then diverges to 2.1–3.0 — a textbook overfitting signature.*
 
 | Iter | A (mean) | B (mean) |
 |---|---|---|
@@ -126,25 +136,25 @@ The accuracy curves alone show *that* masking changes the long-run behavior; the
 | 7,000 | 1.95 | 0.12 |
 | 10,000 | **2.69 (final)** | **0.12 (final)** |
 
-Condition B's val loss decreases monotonically across all 10,000 iterations and stabilizes near 0.12. Condition A's val loss reaches a minimum near 1.07 at iteration 3,000 — the same iteration window where its AR accuracy first crosses 80% — and then diverges steadily upward, ending the run at 2.1–3.0. This is a textbook overfitting signature.
+Condition B's val loss decreases monotonically across all 10,000 iterations and stabilizes near 0.12. Condition A's val loss reaches a minimum near 1.07 at iteration 3,000 — the same iteration window where its autoregressive accuracy first crosses 80% — and then diverges steadily upward, ending the run at 2.1–3.0.
 
 ### 5.2 What the Unmasked Loss Is Overfitting To
 
-The cross-entropy loss is averaged over every token position in the sequence. The divergence in Cond A must therefore be located on some specific subset of token positions. The output tokens are tightly determined by the input (addition is functional), and Cond A's AR accuracy on those output tokens does not collapse — so the divergence cannot be on the output positions.
+The cross-entropy loss is averaged over every token position in the sequence. The divergence in Cond A must therefore be located on some specific subset of token positions. The output tokens are tightly determined by the input (addition is functional), and Cond A's autoregressive accuracy on those output tokens does not collapse — so the divergence cannot be on the output positions.
 
-The remaining candidates are the input-region tokens themselves, and the inter-sequence transitions present in the concatenated training stream. With `block_size = 64` and average sequence length ~10 characters, each training block contains ~6–8 complete equations end-to-end. The unmasked objective asks the model to predict, for example, the first operand of equation *k+1* from the trailing newline of equation *k*. Such transitions are statistical noise — the next equation's operands are drawn independently — so the only way for the model to drive that loss down is to memorize specific (training-stream-position → operand) correspondences. Those correspondences never recur at AR generation time, when the model is given only a single prompt with no surrounding training context.
+The remaining candidates are the input-region tokens themselves, and the **inter-sequence transitions** present in the concatenated training stream. Recall from §2.4 that the trainer concatenates samples into a single token stream and samples random `block_size`-length windows from it; with `block_size = 64` and average sequence length ~10 characters, each window contains ~6–8 complete equations end-to-end. The unmasked objective asks the model to predict, for example, the first operand of equation *k+1* from the trailing newline of equation *k*. Such transitions are statistical noise — the next equation's operands are drawn independently — so the only way for the model to drive that loss down is to memorize specific (training-stream-position → operand) correspondences. Those correspondences never recur at autoregressive generation time, when the model is given only a single prompt with no surrounding training context.
 
 The masked model cannot follow this path by construction: the input-region targets are `-1`, and the inter-sequence transition tokens are inputs of the next sequence. The gradient simply cannot push the model toward spurious cross-equation patterns. This is consistent with B's monotonic loss curve.
 
 ### 5.3 The Loss/Accuracy Paradox
 
-A surprising sub-observation: Cond A's val loss reaches 2.7 — a number that, taken at face value, would normally suggest a model that has lost its ability to make sensible predictions — yet its AR accuracy holds at 80–85%, only ~6 points below the masked baseline.
+A surprising sub-observation: Cond A's val loss reaches 2.7 — a number that, taken at face value, would normally suggest a model that has lost its ability to make sensible predictions — yet its autoregressive accuracy holds at 80–85%, only ~6 points below the masked baseline.
 
-The reconciliation is that the two metrics measure different things. Val loss is the average per-token negative log-likelihood across the entire sequence, dominated by the populous input/transition tokens once those positions begin to diverge. AR accuracy is computed only on the model's output digits, which are the minority of token positions and are not where the divergence is concentrated. The unmasked model has not forgotten how to add; it has additionally acquired a high-loss, high-confidence-but-wrong prediction habit on input tokens that the AR eval simply never asks about.
+The reconciliation is that the two metrics measure different things. Validation loss is the average per-token negative log-likelihood across the entire sequence, dominated by the populous input/transition tokens once those positions begin to diverge. Autoregressive accuracy is computed only on the model's output digits, which are the minority of token positions and are not where the divergence is concentrated. The unmasked model has not forgotten how to add; it has additionally acquired a high-loss, high-confidence-but-wrong prediction habit on input tokens that the autoregressive evaluation simply never asks about.
 
 Two practical consequences follow:
 
-1. In the unmasked setting, **val loss is not a reliable proxy for downstream AR accuracy**. Monitoring val loss alone gives a much more pessimistic picture than the model's actual capability.
+1. In the unmasked setting, **validation loss is not a reliable proxy for downstream autoregressive accuracy**. Monitoring val loss alone gives a much more pessimistic picture than the model's actual capability.
 2. The +6.4pp ceiling gap is the residual capacity that Cond A is spending on input-region patterns and is therefore not spending on output-token accuracy. Masking does not give the model new ability — it stops a leak.
 
 ---
@@ -169,7 +179,11 @@ The result:
 | A vs B (plain, ~70% input) | **+6.4pp** (83.5% → 89.9%) |
 | C vs D (scratchpad, ~22% input) | **−0.8pp** (86.8% → 86.0%) |
 
-The masking benefit collapses to zero — slightly negative, within noise — when the input fraction drops to ~22%. The val-loss diagnostic agrees: Cond C's val loss does diverge after its iter-3,500 minimum, but only to 0.44–0.65, far less catastrophic than Cond A's 2.1–3.0. There is less input to overfit on, so the divergence is smaller, so the ceiling gap is smaller.
+<img width="1000" height="625" alt="Figure 3: masking gap by input token fraction" src="masking_benchmark/results/masking_gap_by_input_fraction.png" />
+
+*Figure 3. Final autoregressive accuracy at iteration 10,000 for plain (A/B) vs scratchpad (C/D) addition, mean ± std over 3 seeds. The masking benefit (+6.4pp) seen on plain addition vanishes when the input fraction drops from ~70% to ~22% on scratchpad (−0.8pp).*
+
+The masking benefit collapses to zero — slightly negative, within noise — when the input fraction drops to ~22%. The validation-loss diagnostic agrees: Cond C's val loss does diverge after its iter-3,500 minimum, but only to 0.44–0.65, far less catastrophic than Cond A's 2.1–3.0. There is less input to overfit on, so the divergence is smaller, so the ceiling gap is smaller.
 
 A secondary contributor is **block density**. With plain sequences averaging ~10 characters and `block_size=64`, each block contains ~6–8 complete equations and therefore ~5–7 inter-equation boundaries. With scratchpad sequences averaging ~32 characters and `block_size=128`, each block contains ~4 equations and ~3 boundaries. Fewer boundaries mean fewer noisy transitions for the unmasked model to memorize, attenuating the same overfitting mechanism.
 
@@ -187,12 +201,12 @@ The findings should be read with the following scope:
 
 - **Model scale.** A 6-layer, 128-dim Transformer is small enough that overfitting pressure on a 9,000-sample dataset arrives quickly. Whether the same input-fraction scaling holds at larger scales is an open question; the conventional wisdom that prompt-masking matters most at small/medium scales is consistent with the direction of effect here.
 - **Synthetic task.** Exhaustive 2-digit addition is a degenerate case — the input/output relation is exactly determined and the input tokens contain almost no information about *other* inputs. Real instruction data has richer input distributions, which may either amplify or attenuate the input-overfitting mechanism.
-- **Three seeds.** The +6.4pp gap and the val-loss divergence are robust across the three seeds tested (Cond B's std is 0.2pp), but a more thorough sweep would tighten the variance bounds.
+- **Three seeds.** The +6.4pp gap and the validation-loss divergence are robust across the three seeds tested (Cond B's std is 0.2pp), but a more thorough sweep would tighten the variance bounds.
 
 What the report contributes:
 
 1. A clean, controlled refutation of the "target masking accelerates training" intuition.
-2. A mechanistic explanation grounded in val-loss divergence and supported by a token-position decomposition argument.
+2. A mechanistic explanation grounded in validation-loss divergence and supported by a token-position decomposition argument.
 3. A scaling rule (gap ∝ input fraction) supported by an A/B/C/D cross-task experiment that holds the model class and optimizer fixed.
 
 The natural follow-up — a controlled manipulation of input fraction at fixed task difficulty — was attempted in a subsequent experiment but fell to a ceiling effect from a [10, 99] digit-range choice that made the unmasked baseline trivially solve the task. The input-fraction scaling rule therefore stands as observed but not yet causally isolated.
@@ -201,7 +215,7 @@ The natural follow-up — a controlled manipulation of input fraction at fixed t
 
 ## 8. Conclusion
 
-Target masking on a tiny Transformer trained on 2-digit addition does not speed up convergence. Both masked and unmasked models reach 80% accuracy in roughly the same number of iterations, and their early-training accuracy curves are visually indistinguishable. What target masking does instead is raise the long-run accuracy ceiling — from 83.5% to 89.9% on plain addition, a +6.4pp gain at ~8% wall-clock overhead — by preventing the unmasked model from spending capacity on val-loss-divergent input-region patterns that AR generation never exercises. Cross-task replication on scratchpad-format addition shows the gap collapses to zero when the input fraction drops from ~70% to ~22%, indicating that the magnitude of the effect is governed by how much of each training sequence is input, not by absolute output length.
+Target masking on a tiny Transformer trained on 2-digit addition does not speed up convergence. Both masked and unmasked models reach 80% accuracy in roughly the same number of iterations, and their early-training accuracy curves are visually indistinguishable. What target masking does instead is raise the long-run accuracy ceiling — from 83.5% to 89.9% on plain addition, a +6.4pp gain at ~8% wall-clock overhead — by preventing the unmasked model from spending capacity on validation-loss-divergent input-region patterns that autoregressive generation never exercises. Cross-task replication on scratchpad-format addition shows the gap collapses to zero when the input fraction drops from ~70% to ~22%, indicating that the magnitude of the effect is governed by how much of each training sequence is input, not by absolute output length.
 
 The shorter version: target masking does not give the model new ability; it stops a leak.
 
@@ -226,9 +240,3 @@ The shorter version: target masking does not give the model new ability; it stop
 | 1338 | 87.7% | 84.8% |
 | 1339 | 86.4% | 86.6% |
 | **Mean ± std** | **86.8 ± 0.8%** | **86.0 ± 1.1%** |
-
-## Appendix B. Figures (to be inserted)
-
-1. AR accuracy convergence — Cond A vs Cond B, mean ± std over 3 seeds, with horizontal threshold lines at 80/85/90%.
-2. Val loss curves — Cond A vs Cond B, mean ± std over 3 seeds; mark Cond A's iter-3,000 minimum.
-3. Cross-task gap — bar chart of final accuracy for A/B (plain, ~70% input) vs C/D (scratchpad, ~22% input), with input-fraction annotations.
